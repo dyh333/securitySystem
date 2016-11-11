@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: "Microsoft YaHei UI";
+}
+.container{padding: 10px;}
+button{outline:0;width:70px;height:30px;overflow:visible}
+.floorDiv{line-height:35px}
+.floorContain{float:left;width:80px}
+.floor{border:1px solid #5D7AE1;border-right:0;border-radius:5px 0 0 5px;background-color:#E3E8D2;margin-right:5px}
+.houseContain{margin-left:80px}
+.house{border:1px solid #5D7AE1;background-color:#7FC080;cursor:pointer;margin-right:5px}
+.houseStatus{background-color:#db7093}

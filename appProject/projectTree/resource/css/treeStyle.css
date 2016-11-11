@@ -1,0 +1,52 @@
+@charset "utf-8";.moreInfo{display:none}
+.moreInfo.open{display:block}
+.headRow{height:45px!important;line-height:45px!important;padding:0 10px;font-size:14px;border-bottom:1px dotted #B2B2B2;margin-left:10px;margin-right:10px;cursor:pointer}
+.docRow{border-bottom:1px dotted #B2B2B2;height:40px!important;line-height:40px!important;padding:0 10px}
+.row{height:30px;line-height:30px;clear:both}
+.row>div{float:left}
+.row .rowLeft{width:90px;padding-right:10px;text-align:right}
+.row .rowRight{padding:0 0 0 10px;width:150px}
+.row *{vertical-align:middle}
+.row img{width:20px;background-repeat:no-repeat}
+#downLoad{float:right;margin-top:10px;background-image:url(../../resource/imgs/download.png);background-size:24px;cursor:pointer}
+#downLoad:hover{background-image:url(../../resource/imgs/download_selected.png);background-size:24px}
+.absolute-Center{margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;height:50px;width:50px;background-color:#2a6496;z-index:999999;display:none}
+.building{background-image:url(../../resource/imgs/building.png);background-size:20px;margin-right:10px}
+.position{float:right;margin-top:13px;background-image:url(../../resource/imgs/position.png);background-size:20px;cursor:pointer;margin-left:10px}
+.position:hover{background-image:url(../../resource/imgs/position_selected.png);background-size:20px}
+.info{float:right;margin-top:13px;background-image:url(../../resource/imgs/info.png);background-size:20px;cursor:pointer}
+.info:hover{background-image:url(../../resource/imgs/info_selected.png);background-size:20px}
+.pdf{background-image:url(../../resource/imgs/pdf.png);background-size:24px}
+.doc{background-image:url(../../resource/imgs/doc.png);background-size:24px}
+.docx{background-image:url(../../resource/imgs/doc.png);background-size:24px}
+.xls{background-image:url(../../resource/imgs/excel.png);background-size:24px}
+.xlsx{background-image:url(../../resource/imgs/excel.png);background-size:24px}
+.dwg{background-image:url(../../resource/imgs/DWG.png);background-size:24px}
+.jpg{background-image:url(../../resource/imgs/jpg.png);background-size:24px}
+.png{background-image:url(../../resource/imgs/jpg.png);background-size:24px}
+.txt{background-image:url(../../resource/imgs/txt.png);background-size:24px}
+.mp4{background-image:url(../../resource/imgs/mp4.png);background-size:24px}
+.dgn{background-image:url(../../resource/imgs/DWG.png);background-size:24px}
+.vertical-nav{width:200px;margin:0;padding:0;float:left;font-family:Segoe UI,Arial;position:relative;list-style:none;background:#fff}
+.vertical-nav li{display:block;padding:0;float:left;font-size:14px;position:relative;background-color:#3d3d3d;border-bottom:1px solid #585858;cursor:pointer}
+.vertical-nav li:first-child{border-top:1px solid #585858}
+.vertical-nav>li>a{display:block;padding:8px;color:#fff;text-decoration:none}
+.vertical-nav>li>a:hover{background-color:#2296D2}
+.vertical-nav>li>a.open{background-color:#2296D2!important}
+.vertical-nav .subMenu{width:120px!important}
+.vertical-nav .subMenu a{display:block;padding:10px 20px;color:#fff;text-decoration:none}
+.vertical-nav .subMenu li.open{background-color:#2296D2!important}
+.vertical-nav .subMenu a:hover{background-color:#2296D2}
+.vertical-nav ul,.vertical-nav ul li ul{list-style:none;margin:0;padding:0;display:none;position:absolute;z-index:999;background:#fff}
+.vertical-nav ul{top:0;left:100%}
+.vertical-nav ul li{clear:both;width:100%}
+.disabled{pointer-events:none;cursor:not-allowed;opacity:.8}
+.spinner{width:60px;height:60px;background-color:#67CF22;margin:100px auto;-webkit-animation:rotateplane 1.2s infinite ease-in-out;animation:rotateplane 1.2s infinite ease-in-out}
+@-webkit-keyframes rotateplane{0%{-webkit-transform:perspective(120px)}
+    50%{-webkit-transform:perspective(120px) rotateY(180deg)}
+    100%{-webkit-transform:perspective(120px) rotateY(180deg) rotateX(180deg)}
+}
+@keyframes rotateplane{0%{transform:perspective(120px) rotateX(0) rotateY(0);-webkit-transform:perspective(120px) rotateX(0) rotateY(0)}
+    50%{transform:perspective(120px) rotateX(-180.1deg) rotateY(0);-webkit-transform:perspective(120px) rotateX(-180.1deg) rotateY(0)}
+    100%{transform:perspective(120px) rotateX(-180deg) rotateY(-179.9deg);-webkit-transform:perspective(120px) rotateX(-180deg) rotateY(-179.9deg)}
+}

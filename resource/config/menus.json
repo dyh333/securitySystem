@@ -1,0 +1,221 @@
+{
+	"status": 1,
+	"message": "",
+	"data": [{
+		"name": "业务查询",
+		"icon": "Icon-ywcx",
+		"href": "",
+		"viewStyle": "L",
+		"serviceUrl": "http://@IP/onemapsrv/GetFQuerylist?appid=qzcyy&fgroup=业务查询",
+		"children": [{
+			"name": "地块红线查询",
+			"icon": "",
+			"href": "businessModule/search/search.html?moduleName=dkhx",
+			"viewStyle": "L",
+			"serviceUrl": ""
+		},
+		{
+			"name": "供地查询",
+			"icon": "",
+			"href": "businessModule/search/search.html?moduleName=gdcx",
+			"viewStyle": "L",
+			"serviceUrl": ""
+		},
+		{
+			"name": "征地查询",
+			"icon": "",
+			"href": "businessModule/search/search.html?moduleName=zdcx",
+			"viewStyle": "L",
+			"serviceUrl": ""
+		},
+		{
+			"name": "建筑单体查询",
+			"icon": "",
+			"href": "businessModule/search/search.html?moduleName=jzdtcx",
+			"viewStyle": "L",
+			"serviceUrl": ""
+		},
+		{
+			"name": "项目查询",
+			"icon": "",
+			"href": "businessModule/search/search.html?moduleName=xmcx",
+			"viewStyle": "L",
+			"serviceUrl": ""
+		},
+		{
+			"name": "重点项目查询",
+			"icon": "",
+			"href": "businessModule/search/search.html?moduleName=zdxmcx",
+			"viewStyle": "L",
+			"serviceUrl": ""
+		}]
+	},
+	{
+		"name": "企业查询",
+		"icon": "Icon-qycx",
+		"href": "businessModule/search/search.html?moduleName=qycx",
+		"viewStyle": "L",
+		"serviceUrl": "http://@IP/onemapsrv/GetFQuerylist?appid=qzcyy&fgroup=企业查询"
+	},
+	{
+		"name": "人口查询",
+		"icon": "Icon-rkcx",
+		"href": "businessModule/search/search.html?moduleName=rkcx",
+		"viewStyle": "L",
+		"serviceUrl": "http://@IP/onemapsrv/GetFQuerylist?appid=qzcyy&fgroup=人口查询"
+	},
+	{
+		"name": "业务统计",
+		"icon": "Icon-ywtj",
+		"href": "",
+		"viewStyle": "C",
+		"serviceUrl": "http://@IP/onemapsrv/GetFStatslist?appid=qzcyy&fgroup=业务统计",
+		"children": [{
+			"name": "规划用地统计",
+			"icon": "",
+			"href": "myLayer.showModalWindow('规划用地统计', '300', '180', 'businessModule/statisticsA/statisticsATools.html?moduleName=ghydtj');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "土地利用规划统计",
+			"icon": "",
+			"href": "myLayer.showModalWindow('土地利用规划统计', '300', '180', 'businessModule/statisticsA/statisticsATools.html?moduleName=tdlyghtj');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "土地利用现状统计",
+			"icon": "",
+			"href": "myLayer.showModalWindow('土地利用现状统计', '300', '210', 'businessModule/statisticsA/statisticsATools.html?moduleName=tdlyxztj');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "管线统计",
+			"icon": "",
+			"href": "myLayer.showModalWindow('管线统计', '300', '160', 'businessModule/statisticsA/statisticsATools.html?moduleName=gxtj');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "道路统计",
+			"icon": "",
+			"href": "myLayer.showModalWindow('道路统计', '300', '160', 'businessModule/statisticsA/statisticsATools.html?moduleName=dltj');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "供地审批统计",
+			"icon": "",
+			"href": "myLayer.showModalWindow('供地审批统计', '300', '160', 'businessModule/statisticsA/statisticsATools.html?moduleName=gdsptj');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "人口统计",
+			"icon": "",
+			"href": "myLayer.showModalWindow('人口统计', '300', '160', 'businessModule/statisticsA/statisticsATools.html?moduleName=rktj');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "税收统计",
+			"icon": "",
+			"href": "myLayer.showModalWindow('税收统计',800,600,'businessModule/companyTax/companyTax.html?serviceKey=qysstjServiceKey','auto')",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		}]
+	},
+	{
+		"name": "分析决策",
+		"icon": "Icon-fxjc",
+		"href": "",
+		"viewStyle": "C",
+		"serviceUrl": "http://@IP/onemapsrv/GetFStatslist?appid=qzcyy&fgroup=分析决策",
+		"children": [{
+			"name": "用地强度分析",
+			"icon": "",
+			"href": "myLayer.showModalWindow('用地强度分析', '300', '160', 'businessModule/statisticsA/statisticsATools.html?moduleName=ydqdfx');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "工程分析",
+			"icon": "",
+			"href": "myLayer.showModalWindow('工程分析', '300', '160', 'businessModule/statisticsA/statisticsATools.html?moduleName=gcfx');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "市政拓扑分析",
+			"icon": "",
+			"href": "myLayer.showModalWindow('市政拓扑分析', '300', '180', 'businessModule/sztpA/sztpATools.html?moduleName=sztpfx');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "管线分析",
+			"icon": "",
+			"href": "myLayer.showModalWindow('管线分析', '300', '160', 'businessModule/statisticsA/statisticsATools.html?moduleName=gxfx');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "智慧征拆分析",
+			"icon": "",
+			"href": "myLayer.showModalWindow('智慧征拆', '300', '220', 'businessModule/wisdomD/wisdomD.html');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		},
+		{
+			"name": "影像比对分析",
+			"icon": "",
+			"href": "myLayer.showModalWindow('影像比对分析', '300', '180', 'businessModule/statisticsA/statisticsATools.html?moduleName=yxbdfx');",
+			"viewStyle": "R",
+			"serviceUrl": ""
+		}]
+	},
+	{
+		"name": "断面展示",
+		"icon": "Icon-dldm",
+		"href": "",
+		"viewStyle": "L",
+		"serviceUrl": "",
+		"children": [{
+			"name": "道路断面",
+			"icon": "",
+			"href": "businessModule/roadSection/roadSection.html",
+			"viewStyle": "L",
+			"serviceUrl": ""
+		},
+		{
+			"name": "管综断面",
+			"icon": "",
+			"href": "businessModule/pipeSection/pipeSection.html",
+			"viewStyle": "L",
+			"serviceUrl": ""
+		}]
+	},
+	{
+		"name": "城市设计",
+		"icon": "Icon-cssj",
+		"href": "businessModule/cityDesign/cityDesign.html",
+		"viewStyle": "L",
+		"serviceUrl": ""
+	},
+	{
+		"name": "园区全景",
+		"icon": "Icon-yqqj",
+		"href": "http://720yun.com/t/06629j8vunv?pano_id=379757",
+		"viewStyle": "B",
+		"serviceUrl": ""
+	},
+	{
+		"name": "法律法规",
+		"icon": "Icon-flfg",
+		"href": "http://172.16.0.75/ghlaws/",
+		"viewStyle": "B",
+		"serviceUrl": ""
+	}]
+}

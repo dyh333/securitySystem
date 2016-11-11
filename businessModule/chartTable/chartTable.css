@@ -1,0 +1,21 @@
+
+body{margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;width:100%;overflow:hidden;font-size:12px;font-family:"Microsoft Yahei"}
+table {table-layout: fixed;}
+.container{width:100%;height:100%;padding: 0 5px !important;}
+.container11>.topLeft{height:280px;width:100%}
+.container11>.bottom{height:280px;width:100%}
+.container21>.topLeft{height:280px;width:385px;float:left}
+.container21>.topRight{height:280px;width:380px;float:left}
+.container21>.bottom{height:280px;width:770px;}
+
+.clear{clear:both}
+::-webkit-scrollbar{width:4px;height:8px}
+::-webkit-scrollbar-button:vertical{display:none}
+::-webkit-scrollbar-track:vertical{background-color:#000}
+::-webkit-scrollbar-track-piece{background-color:#F5F5F5}
+::-webkit-scrollbar-thumb:vertical{margin-right:10px;background-color:#999}
+::-webkit-scrollbar-thumb:vertical:hover{background-color:#666}
+::-webkit-scrollbar-corner:vertical{background-color:#535353}
+::-webkit-scrollbar-resizer:vertical{background-color:#FF6E00}
+::-webkit-scrollbar-thumb:horizontal {  width: 5px;  background-color: #999;   }
+::-webkit-scrollbar-thumb:horizontal:hover {  width: 5px;  background-color: #666;   }

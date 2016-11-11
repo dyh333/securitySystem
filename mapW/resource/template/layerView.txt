@@ -1,0 +1,5 @@
+<section class="layer-header">
+    图层管理器
+    <div class="tools"><span id="layerCloseAll" class="Icon Icon-layerCloseAll" title="关闭全部图层"></span></div>
+</section>
+<section id="layerTree" class="layer-content"></section>

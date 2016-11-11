@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>楼盘表</title>
+    <link href="buildingTable.css?v=1.0.0" rel="stylesheet"/>
+    <!–[if IE]>
+    <style type="text/css">
+        button{outline:0;width:70px;height:30px;line-height:26px;overflow:visible}
+    </style>
+    <![endif]–>
+</head>
+<body oncontextmenu="return false">
+    <div id="container" class="container"></div>
+    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script src="buildingTable.js?v=1.0.0"></script>
+    <script>
+        buildingTable.renderBuildingTable();
+    </script>
+</body>
+</html>

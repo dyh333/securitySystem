@@ -1,0 +1,119 @@
+﻿{
+ "currentVersion": 10.11,
+ "serviceDescription": "",
+ "mapName": "Layers",
+ "description": "",
+ "copyrightText": "",
+ "supportsDynamicLayers": false,
+ "layers": [
+  {
+   "id": 0,
+   "name": "宿迁",
+   "parentLayerId": -1,
+   "defaultVisibility": true,
+   "subLayerIds": null,
+   "minScale": 0,
+   "maxScale": 0
+  }
+ ],
+ "tables": [],
+ "spatialReference": {"wkt": "PROJCS[\"Suqian_1980_3_Degree_GK_CM_117E\",GEOGCS[\"GCS_Xian_1980\",DATUM[\"D_Xian_1980\",SPHEROID[\"Xian_1980\",6378140.0,298.257]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Gauss_Kruger\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",118.5],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Latitude_Of_Origin\",0.0],UNIT[\"Meter\",1.0]]"},
+ "singleFusedMapCache": true,
+ "tileInfo": {
+  "rows": 256,
+  "cols": 256,
+  "dpi": 96,
+  "format": "Mixed",
+  "compressionQuality": 75,
+  "origin": {
+   "x": -5123200,
+   "y": 10002100
+  },
+  "spatialReference": {"wkt": "PROJCS[\"Suqian_1980_3_Degree_GK_CM_117E\",GEOGCS[\"GCS_Xian_1980\",DATUM[\"D_Xian_1980\",SPHEROID[\"Xian_1980\",6378140.0,298.257]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Gauss_Kruger\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",118.5],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Latitude_Of_Origin\",0.0],UNIT[\"Meter\",1.0]]"},
+  "lods": [
+   {
+    "level": 0,
+    "resolution": 264.5838625010584,
+    "scale": 1000000
+   },
+   {
+    "level": 1,
+    "resolution": 132.2919312505292,
+    "scale": 500000
+   },
+   {
+    "level": 2,
+    "resolution": 66.1459656252646,
+    "scale": 250000
+   },
+   {
+    "level": 3,
+    "resolution": 26.458386250105836,
+    "scale": 100000
+   },
+   {
+    "level": 4,
+    "resolution": 13.229193125052918,
+    "scale": 50000
+   },
+   {
+    "level": 5,
+    "resolution": 6.614596562526459,
+    "scale": 25000
+   },
+   {
+    "level": 6,
+    "resolution": 2.6458386250105836,
+    "scale": 10000
+   },
+   {
+    "level": 7,
+    "resolution": 1.3229193125052918,
+    "scale": 5000
+   },
+   {
+    "level": 8,
+    "resolution": 0.5291677250021167,
+    "scale": 2000
+   },
+   {
+    "level": 9,
+    "resolution": 0.26458386250105836,
+    "scale": 1000
+   }
+  ]
+ },
+ "initialExtent": {
+  "xmin": 471718.3278649996,
+  "ymin": 3750557.6162249995,
+  "xmax": 486386.85723499954,
+  "ymax": 3764993.3116749995,
+  "spatialReference": {"wkt": "PROJCS[\"Suqian_1980_3_Degree_GK_CM_117E\",GEOGCS[\"GCS_Xian_1980\",DATUM[\"D_Xian_1980\",SPHEROID[\"Xian_1980\",6378140.0,298.257]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Gauss_Kruger\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",118.5],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Latitude_Of_Origin\",0.0],UNIT[\"Meter\",1.0]]"}
+ },
+ "fullExtent": {
+  "xmin": 472385.07919999957,
+  "ymin": 3751213.7841999996,
+  "xmax": 485720.10589999956,
+  "ymax": 3764337.1436999994,
+  "spatialReference": {"wkt": "PROJCS[\"Suqian_1980_3_Degree_GK_CM_117E\",GEOGCS[\"GCS_Xian_1980\",DATUM[\"D_Xian_1980\",SPHEROID[\"Xian_1980\",6378140.0,298.257]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Gauss_Kruger\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",118.5],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Latitude_Of_Origin\",0.0],UNIT[\"Meter\",1.0]]"}
+ },
+ "minScale": 1000000,
+ "maxScale": 1000,
+ "units": "esriMeters",
+ "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP",
+ "documentInfo": {
+  "Title": "",
+  "Author": "",
+  "Comments": "",
+  "Subject": "",
+  "Category": "",
+  "AntialiasingMode": "Best",
+  "TextAntialiasingMode": "Force",
+  "Keywords": ""
+ },
+ "capabilities": "Map",
+ "supportedQueryFormats": "JSON, AMF",
+ "maxRecordCount": 1000,
+ "maxImageHeight": 4096,
+ "maxImageWidth": 4096
+}

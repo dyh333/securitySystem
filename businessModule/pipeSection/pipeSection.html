@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管综断面</title>
+    <link href="../resource/css/animations.css" rel="stylesheet">
+    <link href="../resource/css/pageChangeStyle.css?v=1.0.0" rel="stylesheet">
+</head>
+<body>
+    <div class="pt-perspective">
+        <div class="container pt-page-1 pt-page pt-page-current ">
+            <div class="row">
+                <div class="caption">
+                    <span class="title">3001断面规划图</span>
+                    <span data-href="pipeSection/img/3001.png" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/3001.png"  alt="" data-roadType="3001">
+            </div>
+            <div class="row" >
+                <div class="caption">
+                    <span class="title">4001断面规划图</span>
+                    <span data-href="pipeSection/img/4001.png" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/4001.png" alt="" data-roadType="4001">
+            </div>
+            <div class="row" >
+                <div class="caption">
+                    <span class="title">中马大街断面</span>
+                    <span data-href="pipeSection/img/中马大街.png" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/中马大街.png" alt="" data-roadType="中马大街">
+            </div>
+            <div class="row" >
+                <div class="caption">
+                    <span class="title">友谊大道断面</span>
+                    <span data-href="pipeSection/img/友谊大道.png" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/友谊大道.png" alt="" data-roadType="友谊大道">
+            </div>
+            <div class="row" >
+                <div class="caption">
+                    <span class="title">钦绣路断面图</span>
+                    <span data-href="pipeSection/img/钦绣路.png" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/钦绣路.png" alt="" data-roadType="钦绣路">
+            </div>
+            <div class="row" >
+                <div class="caption">
+                    <span class="title">马兴路断面</span>
+                    <span data-href="pipeSection/img/马兴路.png" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/马兴路.png" alt="" data-roadType="马兴路">
+            </div>
+        </div>
+        <div class="containerList pt-page-2 pt-page">
+            <div class="header"><span class="back">返回</span><span class="title"></span></div>
+            <div class="img"></div>
+            <div class="listHead">
+                <ul>
+                    <li>搜索结果</li>
+                </ul>
+                <span class="resultMsg">共 <span id="resultTotal" class="resultTotal">0</span> 个结果</span>
+            </div>
+            <div class="list-group"></div>
+        </div>
+    </div>
+    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script>
+        $(function () {
+            $(document).on("click", ".container .fullView", function () {
+                event.preventDefault();
+                var viewHref = $(this).data("href"), title = $(this).children("h4").html();
+                parent.myLayer.showPhoto(title, "businessModule/" + viewHref);
+            });
+            $(document).on("click", ".container img", function () {
+                var roadType = $(this).data("roadtype");
+                onEndAnimation($(".pt-page-1"), $(".pt-page-2"),1);
+                //parent.MyLayer.showRightWindow(roadType + "断面路段", "modules/roadSection/roadList.html?roadType=" + roadType, ["200px", "400px"], 120);
+                $(".containerList .title").html($(this).next(".caption").children(".title").html());
+                $(".containerList>.img").html($(this).clone());
+                showList($(this).data("roadtype"));
+            });
+            $(document).on("click", ".containerList .back", function () {
+                onEndAnimation($(".pt-page-2"), $(".pt-page-1"), 2);
+                parent.mapClear();
+            });
+
+            function onEndAnimation($outpage, $inpage,state) {
+                switch (state) {
+                    case 1:
+                        $outpage.removeClass("pt-page-moveFromLeft").addClass("pt-page-moveToLeft");
+                        $inpage.removeClass("pt-page-moveToRight").addClass("pt-page-moveFromRight").addClass("pt-page-current");
+                        break;
+                    case 2:
+                        $outpage.removeClass("pt-page-moveFromRight").addClass("pt-page-moveToRight");
+                        $inpage.removeClass("pt-page-moveToLeft").addClass("pt-page-moveFromLeft").addClass("pt-page-current");
+                        break;
+                }
+                setTimeout(function () {
+                    $outpage.removeClass("pt-page-current");
+                }, 500);
+            }
+
+            function showList(roadType) {
+                var serviceUrl = parent.mapLayerConfig.getServiceUrlByName("queryRoadSection");
+                parent.geoneAjax.handleAjax({
+                    url: serviceUrl, data: {key: roadType}, callback: function (res) {
+                        showListItem(res);
+                        parent.window.drawGeometryToMap(res.data, false, true);
+                    }
+                });
+            }
+
+            function showListItem(res) {
+                $(".resultTotal").html(res.data.length);
+                var roadArray = [];
+                $(res.data).each(function (index, item) {
+                    roadArray.push('<a href="javascript:void(0)" data-geometryId="' + item.id + '" class="list-group-item">' + item.name + '<span class="badge">' + item.attribute.DLDJ + '</span></a>');
+                });
+                $(".list-group").html(roadArray.join(''));
+                //绑定事件
+                var preGeometryId = null;
+                $(".list-group>a").off("click").on("click", function () {
+                    var geometryId = $(this).data("geometryid");
+                    parent.window.showHighLight(preGeometryId, geometryId);
+                    preGeometryId = geometryId;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

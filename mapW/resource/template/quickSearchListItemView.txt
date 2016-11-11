@@ -1,0 +1,25 @@
+{{#for(var i = 0, len = d.length; i < len; i++){}}
+    <div  class="list-group-item"   onclick="quickSearchView.position({{d[i].id}})">
+        <div class="row listImgHead">
+            <span class="col-xs-2"><span class="mark-Icon mark{{i+1}}"></span></span>
+            <span class="col-xs-10 noPaddingLeft" style="line-height: 33px">{{d[i].name}}</span>
+        </div>
+        <div class="row"></div>
+        {{#for (var queryList in d[i].showlist) {}}
+            <div class="row">
+                {{#if (queryList.indexOf("$") > 0) {}}
+                    {{#var itemSplit = queryList.split('$')}}
+                    <span class="col-xs-4  noPaddingLeft noPaddingRight text-right">{{itemSplit[0]}}：</span>
+                    {{#if(d[i].showlist[queryList]===""){}}
+                        <span class="col-xs-8 noPaddingLeft"></span>
+                    {{#}else{}}
+                        <span class="col-xs-8 noPaddingLeft">{{d[i].showlist[queryList]}}   {{itemSplit[1]}}</span>
+                    {{#}}}
+                {{#}else {}}
+                   <span class="col-xs-4  noPaddingLeft noPaddingRight text-right">{{queryList}}：</span>
+                   <span class="col-xs-8 noPaddingLeft">{{d[i].showlist[queryList]}}</span>
+                {{#}}}
+            </div>
+        {{#}}}
+    </div>
+{{#}}}

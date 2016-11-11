@@ -1,0 +1,176 @@
+{
+	"status": 1,
+	"message": "",
+	"data": {
+		"toolBar": [{
+			"toolKey": "g1",
+			"name": "g1",
+			"icon": "",
+			"type": "group",
+			"order": "1",
+			"children": [{
+				"toolKey": "mapScreen",
+				"name": "全图",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "1"
+			},
+			{
+				"toolKey": "fullScreen",
+				"name": "全屏显示",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "3"
+			}]
+		},
+		{
+			"toolKey": "g2",
+			"name": "g2",
+			"icon": "",
+			"type": "group",
+			"order": "2",
+			"children": [{
+				"toolKey": "zoomIn",
+				"name": "放大",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "1"
+			},
+			{
+				"toolKey": "zoomOut",
+				"name": "缩小",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "2"
+			}]
+		},
+		{
+			"toolKey": "g3",
+			"name": "g3",
+			"icon": "",
+			"type": "group",
+			"order": "3",
+			"children": [{
+				"toolKey": "measureLength",
+				"name": "量测距离",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "1"
+			},
+			{
+				"toolKey": "measureArea",
+				"name": "量测面积",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "2"
+			}]
+		},
+		{
+			"toolKey": "g4",
+			"name": "g4",
+			"icon": "",
+			"type": "group",
+			"order": "4",
+			"children": [
+			{
+				"toolKey": "iQueryTool",
+				"name": "点击查询",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "2"
+			}]
+		},
+		{
+			"toolKey": "g5",
+			"name": "g5",
+			"icon": "",
+			"type": "group",
+			"order": "5",
+			"children": [{
+				"toolKey": "swipeMap",
+				"name": "图层对比",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "1"
+			},
+			{
+				"toolKey": "cmpMap",
+				"name": "双窗口对比",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "2"
+			}]
+		},
+		{
+			"toolKey": "g7",
+			"name": "g7",
+			"icon": "",
+			"type": "group",
+			"order": "6"
+		},
+		{
+			"toolKey": "g6",
+			"name": "g6",
+			"icon": "",
+			"type": "group",
+			"order": "7",
+			"children": [{
+				"toolKey": "clear",
+				"name": "清除",
+				"icon": "",
+				"enable": "True",
+				"visible": "True",
+				"type": "btn",
+				"order": "1"
+			}]
+		}],
+		"quickQuery": [{
+			"name": "项目红线",
+			"url": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=quickFind_DKHX",
+			"order": "",
+			"defaultValue": "易通浩LED项目"
+		},
+		{
+			"name": "道路",
+			"url": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=quickFind_Road",
+			"order": "",
+			"defaultValue": "中马大街"
+		},
+		{
+			"name": "*兴趣点",
+			"url": "",
+			"order": "",
+			"defaultValue": ""
+		},
+		{
+			"name": "*地名地址",
+			"url": "",
+			"order": "",
+			"defaultValue": ""
+		},
+		{
+			"name": "*宗地",
+			"url": "",
+			"order": "",
+			"defaultValue": ""
+		}]
+	}
+}

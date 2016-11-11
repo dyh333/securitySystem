@@ -1,0 +1,24 @@
+[
+  {
+    "label":"主控制台",
+    "icon":"Icon-home",
+    "href":"",
+    "children":[
+      {
+        "label":"地块红线",
+        "icon":"",
+        "href":"https://www.baidu.com/"
+      },
+      {
+        "label":"供地查询",
+        "icon":"",
+        "href":""
+      }
+    ]
+  },
+  {
+    "label":"项目索引",
+    "icon":"Icon-index",
+    "href":""
+  }
+]

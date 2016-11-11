@@ -1,0 +1,34 @@
+{
+	"status": 1,
+	"message": "",
+	"data": [{
+		"name": "项目红线",
+		"url": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=quickFind_DKHX",
+		"order": "",
+		"defaultValue": "易通浩LED项目"
+	},
+	{
+		"name": "道路",
+		"url": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=quickFind_Road",
+		"order": "",
+		"defaultValue": "中马大街"
+	},
+	{
+		"name": "*兴趣点",
+		"url": "",
+		"order": "",
+		"defaultValue": ""
+	},
+	{
+		"name": "*地名地址",
+		"url": "",
+		"order": "",
+		"defaultValue": ""
+	},
+	{
+		"name": "*宗地",
+		"url": "",
+		"order": "",
+		"defaultValue": ""
+	}]
+}

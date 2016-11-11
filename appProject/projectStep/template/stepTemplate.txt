@@ -1,0 +1,17 @@
+<ul>
+    {{# for(var i = 0, len = d.length; i < len; i++){}}
+        <li>
+            {{#if(d[i].stepStatus===1){}}
+                <span class="step-bar active"></span>
+                <span class="step-point active">{{i+1}}</span>
+                <span class="step-title active">{{d[i].stepName}}</span>
+                <span class="step-time active">{{d[i].date}}</span>
+            {{#}else{}}
+                <span class="step-bar"></span>
+                <span class="step-point">{{i+1}}</span>
+                <span class="step-title">{{d[i].stepName}}</span>
+                <span class="step-time">{{d[i].date}}</span>
+            {{#}}}
+        </li>
+    {{#}}}
+</ul>

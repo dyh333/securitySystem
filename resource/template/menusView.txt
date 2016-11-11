@@ -1,0 +1,48 @@
+<div class="left-side-inner">
+     <ul id="sideNav" class="nav  custom-nav">
+        <li class="menu-logo">
+             <a>
+                 <img src="resource/img/logo.png"/>
+                 <span class="logo-name logo-img"><img src="resource/img/logo_title.png"></span>
+             </a>
+         </li>
+        <li class="menu-toggle">
+            <a>
+                <img src="resource/img/bg.png" class="menu-Icon Icon-close" />
+                <span class="logo-name logo-img"></span>
+            </a>
+        </li>
+       {{#for(var i = 0, len = d.length; i < len; i++){}}
+             <li class="menu-list">
+                {{#if(!d[i].children){}}
+                     {{#if(d[i].viewStyle==="B"){}}
+                        <a  href="{{d[i].href}}" data-name="{{d[i].name}}" data-viewStyle="{{d[i].viewStyle}}" target="_blank"><img src="resource/img/bg.png"  class="menu-Icon {{d[i].icon}}"><span>{{d[i].name}}</span></a>
+                     {{#}else if(d[i].viewStyle==="R"){}}
+                        <a  href="{{d[i].href}}"><img src="resource/img/bg.png"  class="menu-Icon {{d[i].icon}}"><span>{{d[i].name}}</span></a>
+                     {{#}else{}}
+                        <a  href="javascript:void(0)" data-name="{{d[i].name}}" data-href={{d[i].href}} data-viewStyle="{{d[i].viewStyle}}" class="haveClick"><img src="resource/img/bg.png"  class="menu-Icon {{d[i].icon}}"><span>{{d[i].name}}</span></a>
+                     {{#}}}
+                {{#}else{}}
+                    <a href="javascript:void(0)">
+                        <img src="resource/img/bg.png" class="menu-Icon {{d[i].icon}}">
+                        <span>{{d[i].name}}</span>
+                        <img src="resource/img/bg.png" class="head-Icon Icon-gray-left"/>
+                    </a>
+                    <ul class="sub-menu-list">
+                        {{#for(var j = 0, lens = d[i].children.length; j < lens; j++){}}
+                            <li>
+                                {{#if(d[i].children[j].viewStyle==="B"){}}
+                                    <a  href="{{d[i].children[j].href}}" data-name="{{d[i].children[j].name}}" data-viewStyle="{{d[i].children[j].viewStyle}}" target="_blank">{{d[i].children[j].name}}</a>
+                                {{#}else if(d[i].children[j].viewStyle==="R"){}}
+                                    <a  href="javascript:void(0);" onclick="{{d[i].children[j].href}}"">{{d[i].children[j].name}}</a>
+                                {{#}else{}}
+                                    <a  href="javascript:void(0)" data-name="{{d[i].children[j].name}}" data-href="{{d[i].children[j].href}}" data-viewStyle="{{d[i].children[j].viewStyle}}" class="haveClick"  >{{d[i].children[j].name}}</a>
+                                {{#}}}
+                            </li>
+                        {{#}}}
+                    </ul>
+                {{#}}}
+             </li>
+       {{#}}}
+    </ul>
+</div>

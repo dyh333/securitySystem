@@ -1,0 +1,2 @@
+<div id="secondFrameHeader" class="secondFrameHeader"><div id="closeSecondFrame"><img  src="resource/img/bg.png" class="other-Icon Icon-left" ></div><span>{{d.name}}</span></div>
+<iframe id="secondFrame" name="secondFrame" class="secondFrame"  src="{{d.href}}"  width="100%" frameborder="0" ></iframe>

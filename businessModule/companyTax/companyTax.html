@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet"  href="../resource/js/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet"  href="../resource/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="../chartTable/chartTable.css?v=1.0.0">
+    <title>企业税收</title>
+    <style>
+        #columnChart{
+            height: 500px;
+            width: 780px;
+        }
+    </style>
+</head>
+<body>
+<div class="container container11">
+    <ul class="nav nav-tabs">
+        <li  class="active"><a href="#detail" data-toggle="tab" >企业税收明细</a></li>
+        <li ><a href="#chart" data-toggle="tab" id="companyD">企业税收统计</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade in active " id="detail">
+            <div class="l-clear"></div>
+            <div id="maingrid" class="grid"></div>
+        </div>
+        <div class="tab-pane fade " id="chart">
+            <div class="bottom" id="columnChart"></div>
+        </div>
+    </div>
+</div>
+<script src="../resource/js/jquery-3.1.0.min.js"></script>
+<script src="../resource/js/bootstrap.min.js"></script>
+<script src="../resource/js/ligerUI/js/core/base.js"></script>
+<script src="../resource/js/ligerUI/js/plugins/ligerGrid.js"></script>
+<script src="../resource/js/ligerUI/js/plugins/ligerResizable.js"></script>
+<script src="../resource/js/echarts.common.min.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        var key = getQueryString("key"),
+                serviceUrl = parent.mapLayerConfig.getServiceUrlByName(getQueryString("serviceKey"));
+        parent.geoneAjax.handleAjax({
+            url: serviceUrl, data: {key: key}, callback: function (result) {
+                showResult(result);
+            }
+        });
+    };
+
+    function  showResult(result) {
+        var data = result.data.grid.data;
+        var grid = $("#maingrid").ligerGrid({
+            columns: result.data.grid.columns,
+            data: {
+                Rows: data,
+                Total: data.length
+            },
+            headerRowHeight: 35,
+            allowAdjustColWidth: true,
+            usePager: false,
+            width: '99%',
+            height: '99%',
+            onSelectRow: function (row, rowid, rowobj) {
+                var data = [];
+                data.push(row.yys);
+                data.push(row.qysds);
+                data.push(row.cswhjss);
+                data.push(row.yhs);
+                data.push(row.jyffj);
+                data.push(row.sljsjj);
+                data.push(row.dfjyfj);
+                data.push(row.qs);
+                data.push(row.gdzys);
+                data.push(row.grsds);
+                data.push(row.tdsys);
+                data.push(row.fcs);
+                showChart(data);
+            }
+        });
+    }
+
+    function showChart(data) {
+        var myChart = echarts.init(document.getElementById('columnChart'));
+        var option = {
+            title: {
+            },
+            tooltip : {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+                formatter: '{b0}: {c0} 元'
+            },
+            grid: {
+                left:'3px',
+                right: '4px',
+                top:'40px',
+                bottom:'25px',
+                containLabel: true
+            },
+            legend: {},
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['营业税', '企业所得税', '城市维护建设税', '印花税', '教育费附加', '水利建设基金', '地方教育附加','契税','耕地占用税','个人所得税','土地使用税','房产税'],
+                    axisTick: {
+                        alignWithLabel: true,
+                        interval:0
+                    },
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 22.5
+                    }
+                }
+            ],
+            yAxis:[
+                {
+                    type: 'value',
+                    name: "单位：元"
+                }
+            ],
+            series: [{
+                name: '税收',
+                type: 'bar',
+                barWidth: '30px',
+                data:data
+            }]
+        };
+        myChart.setOption(option);
+        $('#companyD').tab('show')
+    }
+</script>
+</body>
+</html>

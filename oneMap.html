@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="pragma" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/png">
+  <title>中马钦州产业园-一张图管理系统</title>
+  <link href="resource/plugins/pace/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  <link href="resource/js/skin/layer.css" rel="stylesheet">
+  <link href="resource/css/style.css?v=1.0.0" rel="stylesheet">
+  <link href="mapW/resource/css/mapIcon.css?v=1.0.0" rel="stylesheet">
+</head>
+<body oncontextmenu="return false">
+    <!-- main content start-->
+    <div class="main-content">
+        <div class="header-section">
+            <div class="rightTools">
+                <ul>
+                    <li class="my-dropdown">
+                        <a><img src="resource/img/bg.png" class="head-Icon Icon-user"><span id="userInfo"></span>
+                            <img src="resource/img/bg.png" class="head-Icon Icon-caret-down rotate180"></a>
+                        <ul class="dropdown-mymenu">
+                            <!--<li><a><img  src="resource/img/bg.png" class="head-Icon Icon-task" alt="">我的任务</a></li>-->
+                            <!--<li><a><img  src="resource/img/bg.png" class="head-Icon Icon-calendar" alt="">我的日历</a></li>-->
+                            <!--<li class="divider"><span></span></li>-->
+                            <!--<li><a><img  src="resource/img/bg.png" class="head-Icon Icon-setting" alt="">设置</a></li>-->
+                            <li><a href="index.html?type=loginOut"><img  src="resource/img/bg.png" class="head-Icon Icon-exit" alt="">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="frame-section">
+            <iframe id="main" name="main" src=""   height="100%" width="100%" frameborder="0"></iframe>
+        </div>
+    </div>
+    <!-- main content end-->
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <script src="resource/js/jquery-3.1.0.min.js"></script>
+    <script src="mapW/resource/config/mapLayerConfig.js"></script>
+    <script src="resource/js/geoneAjax.js"></script>
+    <!--business scripts for all pages-->
+    <script src="resource/js/init.js"></script>
+    <script src="resource/plugins/pace/pace.min.js"></script>
+</body>
+</html>

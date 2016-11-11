@@ -1,0 +1,5 @@
+/***查询框***/
+.searchPanel{padding:10px 20px; max-height: 55px;}
+.searchPanel>select{position:relative;font-size: 14px;padding: 6px 0 7px 5px;border: 1px solid #0593d3;margin-right: -5px;width: 100px;outline: medium;top:-1px\9;top: -1px\0;}
+.searchPanel>input{font-size: 12px;padding: 8px;width: 249px;color:#999999;border: 1px solid #0593d3;outline: medium;}
+.searchPanel>button{background:#0593d3;border: none;color: white;padding: 9px 13px; outline: medium;cursor: pointer;}

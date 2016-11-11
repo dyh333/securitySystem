@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+    <title>业务统计</title>
+    <link href="resource/css/treeStyle.css?version=2016060613" rel="stylesheet">
+    <style type="text/css">
+        body {
+            position: absolute;
+            margin: 0;  padding: 0;
+            width: 100%;  height: 100%;
+            overflow: hidden;
+            font-family: 'Open Sans', Arial, Helvetica, Sans-serif, Verdana, Tahoma;
+            font-size: 12px;
+            background-color: #F1F0E1;
+            -moz-user-select: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .contain{
+            width: 100%;
+            height:100%;
+        }
+        .leftPanel {
+            position: absolute;
+            width: 46px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #3d3d3d;
+            z-index: 999;
+            padding-top: 41px;
+        }
+        .rightPanel {
+            height: 100%;
+            width: 280px;
+            margin-left: 46px;
+            background-color: white;
+        }
+        .leftPanel .vertical-nav{
+            width: 46px
+        }
+        .rightPanel .header {
+            background-color: #3d3d3d;
+            height: 42px;
+            line-height: 42px;
+            color: white;
+        }
+        .rightPanel .header div{
+            width: 70px;
+            text-align: center;
+            float: left;
+            cursor: pointer;
+            height: 42px;
+            line-height: 42px;
+        }
+        .rightPanel .header div.open {
+            background-color: white;
+            color: #3d3d3d;
+            border-top: 4px solid #2296D2;
+            line-height: 38px;
+        }
+        .rightPanel .header div:hover{
+            border-top: 4px solid #2296D2;
+            background-color: white;
+            line-height: 38px;
+            color:#3d3d3d;
+        }
+        .rightPanel .bottom{
+            position:absolute;
+            top:42px;
+            left:46px;
+            bottom: 0;
+            width: 280px;
+            overflow-x:hidden;
+        }
+        .rightPanel .bottom>div {
+            overflow: auto;
+            display: none;
+        }
+        .rightPanel .bottom>div.open {
+            display: block;
+        }
+        .row:nth-of-type(even){
+            background-color: #F8F8F8;
+        }
+        #docInfo img:first-child {
+            margin-right: 10px;
+            float: left;
+            margin-top: 10px;
+        }
+        #certificateInfo .head {
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px dotted #cfcfcf;
+            padding: 0 10px;
+            font-size: 16px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        #certificateInfo .headLogo {
+            background-color: #2296D2;
+            padding: 0px 2px;
+            margin-right: 5px;
+        }
+        #certificateInfo .head *{
+            vertical-align:middle;
+        }
+        #certificateInfo .head img {
+            float: right;
+            width: 20px;
+            background-repeat: no-repeat;
+            background-image: url("resource/imgs/info.png");
+            background-size: 20px;
+            margin-top: 10px;
+        }
+        #certificateInfo .head img:hover {
+            background-image: url("resource/imgs/info_selected.png");
+        }
+        .rowTitleTap {
+            width: 180px;
+        }
+        .rowPositionTap {
+            width: 30px;
+            height: 46px;
+            padding-right: 10px;
+        }
+        .docFile{
+            width:190px ;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body >
+    <div class="contain">
+        <div class="leftPanel ">
+            <ul id="accordion" class="vertical-nav">
+            </ul>
+        </div>
+        <div class="rightPanel">
+            <div class="header">
+                <div  class="tab open" data-tabid="baseInfo">基本信息</div>
+                <div  class="tab" data-tabid="docInfo">文档</div>
+                <div  class="tab" data-tabid="buildingInfo">单体</div>
+                <div  class="tab" data-tabid="certificateInfo">书证</div>
+            </div>
+            <div class="bottom">
+                <div id="baseInfo" class="open">
+
+                </div>
+                <div id="docInfo"></div>
+                <div id="buildingInfo"></div>
+                <div id="certificateInfo"></div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute-Center spinner"></div>
+    <script src="resource/js/jquery-2.2.4.min.js"></script>
+    <script src="resource/js/tree/commonAjax.js"></script>
+    <script>
+        $(function() {
+            var bridgeTag=null,device= getQueryString('device');
+            //生成Menus
+            loading.open();
+            var projectCode = getQueryString('projectCode');
+            if (projectCode === null)return false;
+            commonAjax.doGetMenuHandle({
+                data: {projectcode: projectCode},
+                callback: function (result) {
+                    loading.close();
+                    dataContainer.setAjaxDataObject(result);
+                    //创建菜单
+                    var menuHtml = [];
+                    $(result.data.registryState).each(function (index, item) {
+                        menuHtml.push('<li>');
+                        if (index === 0)
+                            menuHtml.push('<a href="javascript:void(0)"  class="open">' + item.stepName + '</a>');
+                        else {
+                            if (item.applicationNo.length === 0)
+                                menuHtml.push('<a href="javascript:void(0)" class="disabled">' + item.stepName + '</a>');
+                            else
+                                menuHtml.push('<a href="javascript:void(0)">' + item.stepName + '</a>');
+                        }
+                        menuHtml.push('<ul class="subMenu">');
+                        $(item.applicationNo).each(function (index, child) {
+                            menuHtml.push('<li><a id="' + child.key + '" href="javascript:void(0)" class="link"  data-key="' + child.key + '">' + child.key + '</a></li>');
+                        });
+                        menuHtml.push('</ul>');
+                        menuHtml.push('</li>');
+                    });
+                    $('#accordion').append(menuHtml.join(''));
+                    //处理第一条记录
+                    firstLoad(result.data.registryState[0].applicationNo[0].key);
+                    //生成基本信息
+                    showBaseInfo(result.data.projectInfo);
+                    //菜单事件
+                    eventControl();
+                }
+            });
+            //移动端桥接
+            commonAjax.connectWebViewJavascriptBridge(function(bridge){
+                bridge.init(function(message,responseCallback){
+                    if(responseCallback){
+                        responseCallback('Right back atcha');
+                    }
+                });
+                bridgeTag=bridge;
+            });
+            function firstLoad(firstKey) {
+                $('#' + firstKey).parent().addClass('open');
+                dataContainer.setMenuKey(firstKey);
+            }
+            function eventControl() {
+              // $(".vertical-nav").verticalnav({speed: 0, align: "left"});
+                $('.vertical-nav>li>a').mouseover(function () {
+                    $(this).next('.subMenu').css('display', 'block');
+                });
+                $('.subMenu').mouseleave(function () {
+                    $(this).css('display', 'none');
+                });
+
+                $('.vertical-nav>li>a').tap(function () {
+                    $('.subMenu').css('display', 'none');
+                    $(this).next('.subMenu').css('display', 'block');
+                });
+                //tab切换
+                $('.tab').tap(function () {
+                    var $this = $(this), tabId = $(this).data('tabid');
+                    if ($this.hasClass('open'))return false;
+                    $('.header').children('.open').removeClass('open');
+                    $('.bottom').children('.open').removeClass('open');
+                    $this.addClass('open');
+                    //切换下属面板
+                    $('#' + tabId).addClass('open');
+                    //请求相关数据
+                    showOtherInfo(tabId);
+                });
+                //点击事件
+                $('.link').tap(function () {
+                    if ($(this).hasClass('open'))return false;
+                    $(this).parent().parent().toggle();
+                    $('#accordion .open').removeClass('open');
+                    $(this).parent('li').addClass('open').parent().prev().addClass('open');
+                    //切换tab时，选中第一个tab
+                    $('.header div').removeClass('open').first().addClass('open');
+                    $('.bottom div').removeClass('open').first().addClass('open');
+                    var key = $(this).data('key');
+                    dataContainer.setMenuKey(key);
+                });
+            }
+            function showBaseInfo(projectInfo) {
+                var baseInfo = [];
+                for (var p in projectInfo) {
+                    baseInfo.push('<div class="row">');
+                    baseInfo.push('<div class="rowLeft">' + p + '</div>');
+                    baseInfo.push('<div class="rowRight">' + projectInfo[p] + '</div>');
+                    baseInfo.push('</div>');
+                }
+                $('#baseInfo').html(baseInfo.join(''));
+            }
+            function showOtherInfo(lType) {
+                var serviceUrl = null;
+                switch (lType) {
+                    case 'docInfo':
+                        serviceUrl = dataContainer.getDocService();
+                        showDocInfo(serviceUrl);
+                        break;
+                    case 'buildingInfo':
+                        serviceUrl = dataContainer.getBuildingService();
+                        showBuildingInfo(serviceUrl);
+                        break;
+                    case 'certificateInfo':
+                        serviceUrl = dataContainer.getCertificateService();
+                        showCertificateInfo(serviceUrl);
+                        break;
+                }
+            }
+            function showDocInfo(serviceUrl) {
+                $('#docInfo').empty();
+                commonAjax.doGetHandle({
+                    url: serviceUrl,
+                    callback: function (result) {
+                        var docHtml = [];
+                        $(result.data.relatedDocs).each(function (index, item) {
+                            docHtml.push('<div class="row docRow">');
+                            docHtml.push('<img class="' + item.extension + '"  src="resource/imgs/transparent.png"/>');
+                            docHtml.push('<div class="docFile">' + item.fileName + '</div>');
+                            if (device != null) {
+                                switch (item.extension.toLowerCase()) {
+                                    case 'pdf':
+                                    case 'doc':
+                                    case 'docx':
+                                    case 'xls':
+                                    case 'xlsx':
+                                    case 'jpg':
+                                    case 'png':
+                                    case 'jpeg':
+                                        docHtml.push('<img id="downLoad" class="review" src="resource/imgs/transparent.png" data-url="' + item.docUrl.replace('@IP',commonAjax.GetIP()) + '">');
+                                        break;
+                                }
+                            }
+                            else {
+                                docHtml.push('<img id="downLoad" class="review" src="resource/imgs/transparent.png" data-url="' + item.docUrl.replace('@IP',commonAjax.GetIP()) + '">');
+                            }
+                            docHtml.push('</div>');
+                        });
+                        $('#docInfo').append(docHtml.join(''));
+                        $('.review').tap(function () {
+                            var docUrl = $(this).data('url');
+                            if(device===null) {
+                                window.open(docUrl, '_blank');
+                                return false;
+                            }
+                            var passJson = {type: 'doc', data: docUrl};
+                            try {
+                                bridgeTag.send(JSON.stringify(passJson), function (responseData) {
+                                });
+                            }
+                            catch (e) {
+                                Android.click("webview", JSON.stringify(passJson));
+                            }
+                        });
+                    }
+                });
+            }
+            function showBuildingInfo(serviceUrl) {
+                $('#buildingInfo').empty();
+                commonAjax.doGetHandle({
+                    url: serviceUrl,
+                    callback: function (result) {
+                        var buildingHtml = [];
+                        $(result.data.buildings).each(function (index, item) {
+                            buildingHtml.push('<div class="row headRow">');
+                            buildingHtml.push('<div class="rowTitleTap">');
+                            buildingHtml.push('<img class="building"  src="resource/imgs/transparent.png"/>');
+                            buildingHtml.push('<span>' + item.buildingNO + '</span>');
+                            buildingHtml.push('</div>');
+                            buildingHtml.push('<div class="rowPositionTap" data-shape="' + item.shape + '">');
+                            buildingHtml.push('<img  class="position" src="resource/imgs/transparent.png" >');
+                            buildingHtml.push('</div>');
+                            buildingHtml.push('</div>');
+                            buildingHtml.push('<div id="moreInfo" class="moreInfo">');
+                            var buildingInfo = item.buildingInfo;
+                            for (var p in buildingInfo) {
+                                buildingHtml.push('<div class="row">');
+                                buildingHtml.push('<div class="rowLeft">' + p + '</div>');
+                                buildingHtml.push('<div class="rowRight">' + buildingInfo[p] + '</div>');
+                                buildingHtml.push('</div>');
+                            }
+                            buildingHtml.push('</div>');
+                        });
+                        $('#buildingInfo').append(buildingHtml.join(''));
+                        $('.rowTitleTap').tap(function () {
+                            if ($(this).parent().next('.moreInfo').hasClass('open')) {
+                                $(this).parent().next('.moreInfo').slideUp();
+                                $(this).parent().next('.moreInfo').removeClass('open');
+                                return false;
+                            }
+                            $('.moreInfo.open').slideUp().removeClass('open');
+                            $(this).parent().next('.moreInfo').slideDown();
+                            $(this).parent().next('.moreInfo').addClass('open');
+                        });
+                        $('.headRow').children('.rowPositionTap').tap(function () {
+                            var shape = $(this).data('shape');
+                            if(device===null) {
+                                parent.window.showPolygonByShape(shape);
+                                return false;
+                            }
+                            var passJson = {type: 'wkt', data:shape};
+                            try {
+                                bridgeTag.send(JSON.stringify(passJson), function (responseData) {
+                                });
+                            }
+                            catch (e) {
+                                Android.click("webview", json.stringify(passJson));
+                            }
+                        });
+                    }
+                });
+            }
+            function showCertificateInfo(serviceUrl) {
+                $('#certificateInfo').empty();
+                commonAjax.doGetHandle({
+                    url: serviceUrl,
+                    callback: function (result) {
+                        var certificateHtml = [];
+                        $(result.data.certificates).each(function (index, certificate) {
+                            certificateHtml.push('<div class="head"><span class="headLogo"></span><span>' + certificate.type + '</span><img id="certificateMoreInfo" class="info" data-url="' + certificate.certificateUrl.replace('@IP',commonAjax.GetIP()) + '" src="resource/imgs/transparent.png"/></div>');
+                            var certificateInfo = certificate.info;
+                            for (var p in certificateInfo) {
+                                certificateHtml.push('<div class="row">');
+                                certificateHtml.push('<div class="rowLeft">' + p + '</div>');
+                                certificateHtml.push('<div class="rowRight">' + certificateInfo[p] + '</div>');
+                                certificateHtml.push('</div>');
+                            }
+                        });
+                        $('#certificateInfo').append(certificateHtml.join(''));
+                        //点击查询
+                        $('#certificateMoreInfo').tap(function () {
+                            var docUrl = $(this).data('url');
+                            if(device===null) {
+                                window.open(docUrl, '_blank');
+                                return false;
+                            }
+                            var passJson = {type: 'doc', data: docUrl};
+                            try {
+                                bridgeTag.send(JSON.stringify(passJson), function (responseData) {
+                                });
+                            }
+                            catch (e) {
+                                Android.click("webview", JSON.stringify(passJson));
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

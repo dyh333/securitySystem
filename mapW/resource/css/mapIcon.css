@@ -1,0 +1,147 @@
+/**quickToolBar**/
+span.Icon-rotating{background-image: url("../img/loading.svg") !important;background-position:5px 5px !important;}
+span.Icon{background: url("../img/btn_mode.png") no-repeat left;height: 30px;width: 30px;float: left;}
+span.Icon.Icon-baseLayer{background-position: 0 0;}
+span.Icon.Icon-baseLayer.active{background-position: 0 -30px;}
+span.Icon.Icon-baseLayerImg{background-position: -30px 0;}
+span.Icon.Icon-baseLayerImg.active{background-position: -30px -30px;}
+span.Icon.Icon-layerView{background-position: -60px 0;}
+span.Icon.Icon-layerCloseAll{background-position: 0 -60px;}
+span.Icon.Icon-layerCloseAll:hover{background-position: 0 -90px;}
+/**mapTools margin-bottom:5px;**/
+span.Icon-toolBar{background: url("../img/toolbar/icon_toolbar.png") no-repeat left;height: 30px;width: 30px;background-color: white;cursor: pointer;float: left;}
+#toolBar{background-position: 0 0;}
+#toolBar:hover{background-position: 0 -30px;}
+#toolBar.active{background-position: -30px 0;background-color:#e8f8ff;}
+#toolBar.active:hover{background-position: -30px -30px;}
+
+span.Icon-toolBar.mapScreen{background-position:-60px 0}
+span.Icon-toolBar.mapScreen:hover{background-position:-60px -30px}
+
+span.Icon-toolBar.fullScreen{background-position:-90px 0}
+span.Icon-toolBar.fullScreen:hover{background-position:-90px -30px}
+span.Icon-toolBar.fullScreen.active{background-position:-90px -30px;background-color:#e8f8ff;}
+
+span.Icon-toolBar.zoomIn{background-position:-120px 0}
+span.Icon-toolBar.zoomIn:hover{background-position:-120px -30px}
+
+span.Icon-toolBar.zoomOut{background-position:-150px 0}
+span.Icon-toolBar.zoomOut:hover{background-position:-150px -30px}
+
+span.Icon-toolBar.measureLength{background-position:-180px 0}
+span.Icon-toolBar.measureLength:hover{background-position:-180px -30px}
+
+span.Icon-toolBar.measureArea{background-position:-210px 0}
+span.Icon-toolBar.measureArea:hover{background-position:-210px -30px}
+
+span.Icon-toolBar.queryBuilding{background-position:-240px 0; }
+span.Icon-toolBar.queryBuilding:hover{background-position:-240px -30px}
+span.Icon-toolBar.queryBuilding.active{background-position:-240px -30px;background-color:#e8f8ff;}
+
+span.Icon-toolBar.position{background-position:-270px 0; }
+span.Icon-toolBar.position:hover{background-position:-270px -30px}
+
+span.Icon-toolBar.dot{background-position:-322px -22px;width: 5px;height:5px;float: right;margin-top: 24px;margin-right: 1px; }
+
+span.Icon-toolBar.iQueryTool{background-position:0 -60px; }
+span.Icon-toolBar.iQueryTool:hover{background-position:0 -90px}
+span.Icon-toolBar.iQueryTool.active{background-position:0 -90px;background-color:#e8f8ff;}
+
+span.Icon-toolBar.swipeMap{background-position:-30px -60px; }
+span.Icon-toolBar.swipeMap:hover{background-position:-30px -90px}
+
+span.Icon-toolBar.cmpMap{background-position:-60px -60px; }
+span.Icon-toolBar.cmpMap:hover{background-position:-60px -90px}
+
+span.Icon-toolBar.clear{background-position:-90px -60px; }
+span.Icon-toolBar.clear:hover{background-position:-90px -90px}
+
+span.Icon-toolBar.print{background-position:-120px -60px; }
+span.Icon-toolBar.print:hover{background-position:-120px -90px}
+/**图层图标Start**/
+.layer-Icon{background:url("../img/layericons/layerIcon.png") no-repeat left; height: 20px;width: 20px;}
+.layer-Icon.groupNode{background-position:  0 0;}
+.layer-Icon.childNode{background-position:-20px 0;}
+.layer-Icon.layerI{background-position:-40px 0;}
+.layer-Icon.icon-caret-down{background-position:-60px 0; }
+.layer-Icon.icon-caret-right{background-position:-80px 0; }
+.layer-Icon.icon-check-empty{background-position:-100px 0; }
+.layer-Icon.icon-check{background-position:-120px 0; }
+/**图层图标End**/
+/**菜单工具条图标Start**/
+img.menu-Icon{background: url("../img/icon_leftmenu.png") no-repeat left;height: 50px;width: 50px;}
+img.menu-Icon.Icon-close{background-position: 0 0;}
+img.menu-Icon.Icon-close:hover{background-position: 0 -50px;}
+img.menu-Icon.Icon-close.active{background-position: 0 -50px;}
+img.menu-Icon.Icon-home{background-position: -50px 0;}
+img.menu-Icon.Icon-home:hover{background-position: -50px -50px;}
+img.menu-Icon.Icon-home.active{background-position: -50px -50px;}
+img.menu-Icon.Icon-index{background-position: -100px 0;}
+img.menu-Icon.Icon-index:hover{background-position: -100px -50px;}
+img.menu-Icon.Icon-index.active{background-position: -100px -50px;}
+img.menu-Icon.Icon-qycx{background-position: -150px 0;}
+img.menu-Icon.Icon-qycx:hover{background-position: -150px -50px;}
+img.menu-Icon.Icon-qycx.active{background-position: -150px -50px;}
+img.menu-Icon.Icon-fxjc{background-position: -200px 0;}
+img.menu-Icon.Icon-fxjc:hover{background-position: -200px -50px;}
+img.menu-Icon.Icon-fxjc.active{background-position: -200px -50px;}
+img.menu-Icon.Icon-note{background-position: -250px 0;}
+img.menu-Icon.Icon-note:hover{background-position: -250px -50px;}
+img.menu-Icon.Icon-note:active{background-position: -250px -50px;}
+img.menu-Icon.Icon-setting{background-position: -300px 0;}
+img.menu-Icon.Icon-setting:hover{background-position: -300px -50px;}
+img.menu-Icon.Icon-setting.active{background-position: -300px -50px;}
+img.menu-Icon.Icon-dot{background-position: -344px -44px;}
+/**钦州一张图Menu**/
+img.menu-Icon.Icon-ywcx{background-position: -350px 0;}
+img.menu-Icon.Icon-ywcx:hover{background-position: -350px -50px;}
+img.menu-Icon.Icon-ywcx.active{background-position: -350px -50px;}
+img.menu-Icon.Icon-rkcx{background-position: -400px 0;}
+img.menu-Icon.Icon-rkcx:hover{background-position: -400px -50px;}
+img.menu-Icon.Icon-rkcx.active{background-position: -400px -50px;}
+img.menu-Icon.Icon-ywtj{background-position: -450px 0;}
+img.menu-Icon.Icon-ywtj:hover{background-position: -450px -50px;}
+img.menu-Icon.Icon-ywtj.active{background-position: -450px -50px;}
+img.menu-Icon.Icon-flfg{background-position: -500px 0;}
+img.menu-Icon.Icon-flfg:hover{background-position: -500px -50px;}
+img.menu-Icon.Icon-flfg.active{background-position: -500px -50px;}
+img.menu-Icon.Icon-yqqj{background-position: -550px 0;}
+img.menu-Icon.Icon-yqqj:hover{background-position: -550px -50px;}
+img.menu-Icon.Icon-yqqj.active{background-position: -550px -50px;}
+img.menu-Icon.Icon-dldm{background-position: -600px 0;}
+img.menu-Icon.Icon-dldm:hover{background-position: -600px -50px;}
+img.menu-Icon.Icon-dldm.active{background-position: -600px -50px;}
+img.menu-Icon.Icon-cssj{background-position: -650px 0;}
+img.menu-Icon.Icon-cssj:hover{background-position: -650px -50px;}
+img.menu-Icon.Icon-cssj.active{background-position: -650px -50px;}
+/**菜单工具条图标End**/
+/**ICon others start**/
+img.head-Icon{background: url("../img/icon_headerTools.png") no-repeat left;height: 30px;width: 30px;cursor: pointer;}
+img.head-Icon.Icon-caret-down{background-position: 0 0}
+img.head-Icon.Icon-bell{background-position: -60px -2px;}
+img.head-Icon.Icon-user{background-position: -90px -2px;}
+img.head-Icon.Icon-gray-left{background-position: -120px -2px;}
+img.head-Icon.Icon-task{background-position: -150px -2px;}
+img.head-Icon.Icon-calendar{background-position: -180px -2px;}
+img.head-Icon.Icon-setting{background-position: -210px -2px;}
+img.head-Icon.Icon-exit{background-position: -240px -2px;}
+/**OtherIcon**/
+img.other-Icon{background: url("../img/icon_other.png") no-repeat left;height: 30px;width: 30px;cursor: pointer;}
+img.other-Icon.Icon-left:hover{background-position: 0 -30px;}
+img.other-Icon.Icon-close{background-position: -120px 0;}
+img.other-Icon.Icon-close:hover{background-position: -120px -60px;}
+/**ICon others end**/
+/**POIMarker Start**/
+span.mark-Icon{background:url("../img/poi/icon-poi.png") no-repeat left;float: left;width: 30px;height: 30px;}
+span.mark-Icon.mark1{background-position: 0 0;}
+span.mark-Icon.mark2{background-position: -30px 0;}
+span.mark-Icon.mark3{background-position: -60px 0;}
+span.mark-Icon.mark4{background-position: -90px 0;}
+span.mark-Icon.mark5{background-position: -120px 0;}
+span.mark-Icon.mark6{background-position: -150px 0;}
+span.mark-Icon.mark7{background-position: -180px 0;}
+span.mark-Icon.mark8{background-position: -210px 0;}
+span.mark-Icon.mark9{background-position: -240px 0;}
+span.mark-Icon.mark10{background-position:-270px 0;}
+/**POIMarker End**/
+

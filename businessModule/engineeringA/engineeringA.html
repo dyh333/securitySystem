@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <title>工程分析</title>
+    <link rel="stylesheet"  href="../resource/css/bootstrap.min.css">
+    <style>
+        body{overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;}
+        .container-fluid{padding:10px 20px;}
+        input[type='text']{width: 100%;}
+        .row{padding: 3px 0;}
+        .areaContainer{border: 1px solid #f2dede;border-radius: 4px;padding: 10px 0;}
+        .searchFooter{position: absolute;left: 0;bottom: 0;width: 100%;background-color: #EEEEEE;text-align: right;padding:5px 0;}
+        .searchFooter>button{background:#0593d3;border: none;color: white;padding: 4px 12px; cursor: pointer;outline: medium;border-bottom: 1px solid #0593d3;margin-right: 10px;}
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 text-right">分析范围面积</div>
+            <div class="col-xs-4" ><input id="fxfwmj" type="text" disabled></div>
+            <div class="col-xs-4">㎡</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 text-right">建筑占地面积</div>
+            <div class="col-xs-4" ><input id="jzzdmj" type="text" disabled></div>
+            <div class="col-xs-4">㎡</div>
+        </div>
+        <div class="row">
+            <div  class="col-xs-4 text-right">建筑总面积</div>
+            <div class="col-xs-4" ><input id="jzzmj" type="text" disabled ></div>
+            <div  class="col-xs-4">㎡</div>
+        </div>
+        <div class="row">
+            <div  class="col-xs-4 text-right">建筑密度</div>
+            <div  class="col-xs-4" ><input id="jzmd" type="text"  disabled></div>
+            <div  class="col-xs-4">㎡</div>
+        </div>
+        <div class="row">
+            <div  class="col-xs-4 text-right">竖向界限上限</div>
+            <div  class="col-xs-4" ><input id="sxjxsx" type="text"  disabled></div>
+            <div  class="col-xs-4">m(绝对标高)</div>
+        </div>
+        <div class="row">
+            <div  class="col-xs-4 text-right">竖向界限下限</div>
+            <div  class="col-xs-4" ><input id="sxjxxx" type="text"  disabled></div>
+            <div  class="col-xs-4">m(绝对标高)</div>
+        </div>
+        <div class="row" style="padding: 10px 20px;">
+            <div class="areaContainer">
+                <div class="row">
+                    <div class="col-xs-4 text-center"><input  type="radio"  name="g" checked="checked" value="0"></div>
+                    <div class="col-xs-8 text-left">完全包含楼栋</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 text-center"><input  type="radio" name="g" value="1"></div>
+                    <div class="col-xs-8 text-left">完全包含及相交楼栋</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="searchFooter">
+        <button id="search"  type="button">分析</button>
+    </div>
+    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script src="engineeringA.js?v=1.0.0"></script>
+</body>
+</html>

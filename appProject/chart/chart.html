@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+    <title>业务统计</title>
+    <link href="resource/css/font-awesome.min.css" rel="stylesheet">
+    <link href="resource/css/chartStyle.css" rel="stylesheet">
+</head>
+<body>
+    <div class="contain">
+        <div class="leftPanel">
+            <ul id="accordion" class="accordion "></ul>
+        </div>
+        <div class="rightPanel">
+            <div class="header"><span id="headTitle">规划用地统计</span>
+                <a id="menu" class="left"><img src="resource/imgs/menu.png"/></a>
+                <a id="table" class="right "  href="javascript:void(0)" ><img src="resource/imgs/transparent.png" class="tableBtn" /></a>
+                <a id="pie" class="right" href="javascript:void(0)" ><img src="resource/imgs/transparent.png"  class="pieBtn"/></a>
+                <a id="column" class="right" href="javascript:void(0)" ><img src="resource/imgs/transparent.png" class="columnBtn" /></a>
+            </div>
+            <div class="bottom">
+                <div id="tableContent" class="tabContent">
+                    <table class="table" cellspacing="0" cellpadding="0">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="columnContent" class="tabContent" ></div>
+                <div id="pieContent" class="tabContent" style="width: 95%"></div>
+            </div>
+        </div>
+    </div>
+    <div class="zhezhao"></div>
+    <div class="absolute-Center spinner"></div>
+    <script src="resource/js/jquery-2.2.4.min.js"></script>
+    <script src="resource/js/chart/jquery.canvasjs.min.js"></script>
+    <script src="resource/js/chart/commonAjax.js"></script>
+    <script>
+        $(function() {
+            var resultData = null,isPie=false;
+            //生成Menus
+            commonAjax.doGetMenuHandle({
+                callback: function (result) {
+                    firstLoad(result.data[0].children[0]);//默认选中第一条
+                    var menuHtml = [];
+                    $(result.data).each(function (index, item) {
+                        menuHtml.push('<li>');
+                        menuHtml.push('<div class="link"><i class="fa ' + item.imgSrc + '"></i>' + item.label + '<i class="fa fa-chevron-down"></i></div>');
+                        menuHtml.push('<ul class="submenu">');
+                        $(item.children).each(function (index, child) {
+                            menuHtml.push('<li><a href="javascript:void(0)" data-href="' + child.href + '" data-label="' + child.label + '"  data-initType="' + child.initType + '">' + child.label + '</a></li>');
+                        });
+                        menuHtml.push('</ul>');
+                        menuHtml.push('</li>');
+                    });
+                    $('#accordion').html(menuHtml.join(''))
+                    eventControl();
+                }
+            });
+            loading.open();
+
+            function firstLoad(menu) {
+                resultData = null;
+                var dataObject={};
+                switch(menu.href) {
+                    case "gxtj":
+                    case "hbqhtj":
+                        dataObject = {ghlx: '总规'};
+                        break;
+                    case "dltj":
+                        dataObject = {tjlx: '总规'};
+                        break;
+                    case 'gdsp':
+                        dataObject = {wkt: ''};
+                }
+                commonAjax.doGetHandle({
+                    moduleName: menu.href, data: dataObject, callback: function (result) {
+                        showTable(result);//table
+                        resultData = result.data.chart;
+                        $(resultData).each(function (index, chartData) {
+                            $('#' + chartData.category).css('display', 'block');
+                        });
+
+                        $('.' + menu.initType + 'Btn').addClass('selected').parent().addClass('select');
+                        $(".tabContent").hide();
+                        $('#' + menu.initType + 'Content').css('display', 'block');
+                        $('#headTitle').html(menu.label);
+                        if (menu.initType === 'table')return false;
+                        createChart(menu.initType);
+                        isPie=false;
+                    }
+                });
+            }
+
+            function eventControl() {
+                $('.link').tap(function () {
+                    var $this = $(this), $next = $this.next();
+                    $this.parent().toggleClass('open');
+                    $next.slideToggle(200);
+                    var $nextSubmenus = $('#accordion').find('.submenu').not($next);
+                    $nextSubmenus.parent().removeClass('open');
+                    $nextSubmenus.hide();
+                });
+                $('.submenu a').tap(function () {
+                    if ($(this).hasClass('open')) {
+                        return false;
+                    } else {
+                        $('.submenu a.open').removeClass('open');
+                        $(this).addClass('open')
+                    }
+                    closeLeft();
+                    //清除全部
+                    $('#columnContent').empty();
+                    $('#pieContent').empty();
+                    $('.right').removeClass('select').children('img').removeClass('selected');
+                    var initType = $(this).data('inittype'), label = $(this).data('label'), href = $(this).data('href');
+                    setTimeout(function () {
+                        //加载页面
+                        firstLoad({
+                            label: label,
+                            initType: initType,
+                            href: href
+                        });
+                    }, 200);
+                });
+                $('#menu').tap(function () {
+                    $('.zhezhao').css("display", "block");
+                    $('.leftPanel').animate({"left": "0"});
+                });
+                $('.right').tap(function () {
+                    if ($(this).hasClass('select')) {
+                        return false;
+                    }
+                    $('.right').removeClass('select').children('img').removeClass('selected');
+                    $(this).addClass('select').children('img').addClass('selected');
+                    //执行添加
+                    $('.tabContent').css('display', 'none');
+                    var tabId = $(this).attr('id');
+                    $('#' + tabId + 'Content').css('display', 'block');
+                    if (tabId === 'table')return false;
+                    if (tabId === 'pie' && isPie===false) {
+                        isPie = true;
+                        createChart(tabId);
+                    }
+                });
+                $('.zhezhao').tap(function () {
+                    closeLeft();
+                });
+            }
+
+            function closeLeft() {
+                $('.zhezhao').css("display", "none");
+                $('.leftPanel').animate({"left": "-200px"});
+            }
+
+            /*生成table*/
+            function showTable(result) {
+                var tableColumns = result.data.grid.columns;
+                var tableData = result.data.grid.data;
+                var headHtml = [], bodyHtml = [];
+                headHtml.push('<tr>');
+                $(tableColumns).each(function (index, item) {
+                    var headStyle = [];
+                    if (!item.align === false)
+                        headStyle.push("text-align:" + item.align);
+                    if (!item.width === false)
+                        headStyle.push("width:" + item.width + "px");
+                    headHtml.push('<th style="' + headStyle.join(';') + '">' + item.display + '</th>');
+                });
+                headHtml.push('</tr>');
+                $('thead').html(headHtml.join(''));
+
+                if (tableData.length === 0) {
+                    $('tbody').html('<tr><td>未查询到相关数据！</td></tr>');
+                    loading.close();
+                    return false;
+                }
+
+                var headConfig = null;
+                $(tableData).each(function (index, item) {
+                    bodyHtml.push('<tr>');
+                    for (var p in item) {
+                        headConfig = getHeadColumn(tableColumns, p);
+                        if (headConfig === null) {
+                        }
+                        else {
+                            var headStyle = [];
+                            if (!headConfig.align === false)
+                                headStyle.push("text-align:" + headConfig.align);
+                            bodyHtml.push('<td style="' + headStyle.join(';') + '">' + item[p] + '</td>');
+                        }
+                    }
+                    bodyHtml.push('</tr>');
+                });
+                $('tbody').html(bodyHtml.join(''));
+                parent.loading.close();
+            }
+
+            function getHeadColumn(tableColumns, name) {
+                var header = null;
+                $(tableColumns).each(function (index, item) {
+                    if (item.name === name) {
+                        header = item;
+                        return false;
+                    }
+                });
+                return header;
+            }
+
+            /**生成column**/
+            function createChart(id) {
+                $(resultData).each(function (index, chartData) {
+                    if (chartData.category === id) {
+                        showChart(id + 'Content', chartData);
+                        return false;
+                    }
+                });
+            }
+
+            function showChart(id, chartData) {
+                var chart = new CanvasJS.Chart(id, chartData);
+                chartData.data[0].indexLabelFontSize = 15;
+                chart.render();
+            }
+        });
+    </script>
+</body>
+</html>

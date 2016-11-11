@@ -1,0 +1,55 @@
+{
+	"status": 1,
+	"message": "",
+	"data": {
+		"baseMap": [{
+			"id": "7e7804d5-eb30-4c4b-aced-c26fb1f870af",
+			"name": "baseLayer",
+			"label": "地图",
+			"layerType": "tile",
+			"serviceUrl": "http://@IP/qipscms/sipsd/service/TileService/ZMCYY_DZDT/MapServer",
+			"filter": "",
+			"visibleLayers": "",
+			"tokenName": "",
+			"opacity": "1",
+			"order": "1",
+			"offline": {
+				"filename": "QZZMCYY.tpk",
+				"filesize": 166.0,
+				"updatetime": 20161013,
+				"label": "基础底图",
+				"url": "http://202.103.250.165:8800/IosTpk/QZZMCYY.tpk"
+			},
+			"defaultVisible": "1"
+		},
+		{
+			"id": "31541707-2b64-4bf1-b0cb-25b6ef97eb66",
+			"name": "baseLayerImg",
+			"label": "影像",
+			"layerType": "tile",
+			"serviceUrl": "http://@IP/qipscms/sipsd/service/TileService/ZMCYY_YXNEW_2016/MapServer",
+			"filter": "",
+			"visibleLayers": "",
+			"tokenName": "token_qz",
+			"opacity": "1",
+			"order": "2",
+			"offline": {
+				"filename": "QZZMCYYYX2016.tpk",
+				"filesize": 878.0,
+				"updatetime": 20161013,
+				"label": "基础影像",
+				"url": "http://202.103.250.165:8800/IosTpk/QZZMCYYYX2016.tpk"
+			},
+			"defaultVisible": "0"
+		}],
+		"defaultMapExtent": "566768.8272134352,2406110.7769996533,570521.19741769007,2409911.3489890331",
+		"userBaseLayerInitMaps": [],
+		"userImgLayerInitMaps": [],
+		"token": [{
+			"id": "token_qz",
+			"label": "TOKEN",
+			"tokenUrl": "PgCGAB7R2gmGs7ZsDm9/ggdpgmjqgKpuGAfEHoiYletisMZfb3OgTwlB504j6SKkQU3Onc7hUwYV2ECtnS3BpEeVcDhiUFyxYk8fK//ZlJWJX/yrJonocQ=="
+		}],
+		"spatialReference": "PROJCS[\"Beijing_1954_3_Degree_GK_CM_108E\",GEOGCS[\"GCS_Beijing_1954\",DATUM[\"D_Beijing_1954\",SPHEROID[\"Krasovsky_1940\",6378245.0,298.3]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Gauss_Kruger\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",108.0],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Latitude_Of_Origin\",0.0],UNIT[\"Meter\",1.0],AUTHORITY[\"EPSG\",2433]]"
+	}
+}

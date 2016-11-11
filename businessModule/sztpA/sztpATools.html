@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <title>市政拓扑分析</title>
+    <link href="../resource/css/commonStyle.css?v=1.0.0" rel="stylesheet">
+</head>
+<body oncontextmenu="return false">
+    <div class="toolContainer">
+        <div class="row">
+            <span>扩充范围：</span>
+            <input id="distance" class="control" type="number" min="0"  step="1" value="50" style="ime-mode:disabled;width: 100px;" onpaste="return false;"   onkeypress="sztpATools.isInt()"/>
+            <span>米</span>
+        </div>
+        <div class="row">
+            <span>空间绘制：</span>
+            <img src="../resource/img/bg.png" data-type="polyline"  class="tools-Icon polyline polygonSelect"  width="32"/>
+            <img src="../resource/img/bg.png" data-type="polygon"  class="tools-Icon polygon polygonSelect"  width="32"/>
+        </div>
+    </div>
+    <div class="searchFooter">
+        <button id="search"  type="button">查询</button>
+    </div>
+    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script src="sztpATools.js?v=1.0.0"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+body{margin: 0;padding: 0;font-size: 12px;-moz-user-select:none;user-select:none;-webkit-user-select:none;overflow: hidden;}
+ul,li{padding: 0;margin: 0;list-style-type: none;}
+.resultPanel{background:#f8f8f8;}
+.resultPanel>.resultPanel-header{height: 30px;border-bottom: 1px solid #d2d2d2;}
+.resultPanel>.resultPanel-header>.resultMsg{float: right;margin: -25px 20px 0 0;}
+.resultPanel>.resultPanel-header>.resultMsg>.resultTotal{color:#0593d3;font-size:16px;}
+.resultPanel>.resultPanel-header li{background: white;width:70px;padding:8px; text-align:center;margin-left: 20px;border: 1px solid #d2d2d2;border-bottom: 0;}
+.resultPanel>.resultPanel-content{background: white;overflow: auto;}
+.resultPanel>.resultPanel-footer{background: white;height:40px;text-align: center;padding: 4px 0 0;}
+/***查询框***/
+.searchPanel{background:#f8f8f8;padding:10px 20px;}
+.searchPanel>.listItem{margin-bottom: 10px;}
+.searchPanel>.listItem>button{background:#0593d3;border: none;color: white;padding: 8px 12px; cursor: pointer;outline: medium;border-bottom: 1px solid #0593d3;}
+.searchPanel>.listItemSearchBtn{margin-bottom: 10px;text-align: right;}
+.searchPanel>.listItemSearchBtn>button{width: 80px;cursor: pointer}
+.searchPanel>.listItem>div.title{width: 60px;float: left;margin-top: 9px;text-align: right;padding-right: 10px;}
+.searchPanel>.listItem>input{position: relative;font-size: 12px;padding: 8px;width: 190px;color:#999999;border: 1px solid #d2d2d2;outline: medium;top:1px\9;top: 1px\0;}
+.searchPanel>.listItem>select{position: relative;font-size: 12px;padding: 8px;width: 208px;color:#999999;border: 1px solid #d2d2d2;outline: medium;top:1px\9;top: 1px\0;}
+.searchPanel>.listItemOne>input{position: relative;font-size: 12px;padding: 8px;width: 208px;color:#999999;border: 1px solid #0593d3;outline: medium;top:1px\9;top: 1px\0;}
+.searchPanel>.listItemOne>button{background:#0593d3;border: none;color: white;padding: 8px 12px; cursor: pointer;outline: medium;border-bottom: 1px solid #0593d3;}
+.searchPanel>.listItem>.range{width: 74px;}
+/**statisticsA**/
+.toolContainer{padding: 0 10px 0 20px;}
+.toolContainer>.row{height: 40px;line-height: 40px;padding: 0 10px;}
+.toolContainer>.row *{vertical-align:middle;}
+.toolContainer>.row>span{margin-right: 10px;}
+.toolContainer>.row>img{cursor: pointer;background-color: black;}
+.toolContainer>.row>select{position:relative;font-size: 14px;padding: 6px 0 6px 5px;border: 1px solid #d2d2d2;margin-right: -5px;width: 210px;outline: medium;top:-1px\9;top: -1px\0;}
+.toolContainer>.row>input{position: relative;font-size: 12px;padding: 8px;width: 190px;color:#999999;border: 1px solid #d2d2d2;outline: medium;top:1px\9;top: 1px\0;}
+.searchFooter{position: absolute;left: 0;bottom: 0;width: 100%;background-color: #EEEEEE;text-align: right;padding:5px 0;}
+.searchFooter>button{background:#0593d3;border: none;color: white;padding: 7px 12px; cursor: pointer;outline: medium;border-bottom: 1px solid #0593d3;margin-right: 10px;}
+/***bootStrap style***/
+.noPaddingLeft{padding-left:0!important}
+.noPaddingRight{padding-right:0!important}
+.text-right{text-align: right;}
+.row{margin-left:-15px;margin-right:-15px;}
+.list-group{padding-left: 0;}
+.list-group-item{position: relative;display:block;padding:10px 15px;background-color:#fff;margin-bottom: 0;border: 0;color:#3d3d3d;font-size: 12px;cursor: pointer;}
+.list-group-item:hover{background-color: #f8f8f8;}
+.list-group-item>.row{line-height: 20px;}
+.list-group-item>.listImgHead{font-size: 14px;color: #3d3d3d;}
+.list-group-item>.listImgHead>span.title{white-space: nowrap;  text-overflow: ellipsis;  overflow: hidden;}
+.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{float:left}
+.col-xs-2{width:16.66666667%;}
+.col-xs-4{width:33.33333333%}
+.col-xs-8{width:66.66666667%}
+.col-xs-10{width:83.33333333%}
+.col-xs-2>span.mark-Icon{margin-left: 20px;}
+.clearfix:after,.clearfix:before,.row:after,.row:before{content:" ";display:table}
+.clearfix:after,.row:after{clear:both}
+/**ICon**/
+.tools-Icon{background:url("../img/icon_tool.png") no-repeat left; height: 32px;width: 32px;background-color:#424242 !important; }
+.tools-Icon.point{background-position:  0 0;}
+.tools-Icon.polyline{background-position:  -32px 0;}
+.tools-Icon.polygon{background-position:  -64px 0;}
+.tools-Icon.text{background-position:  -96px 0;}
+.tools-Icon.remove{background-position:  -128px 0;}
+/**scroll**/
+::-webkit-scrollbar{width:4px;height:8px}
+::-webkit-scrollbar-button:vertical{display:none}
+::-webkit-scrollbar-track:vertical{background-color:#000}
+::-webkit-scrollbar-track-piece{background-color:#F5F5F5}
+::-webkit-scrollbar-thumb:vertical{margin-right:10px;background-color:#999}
+::-webkit-scrollbar-thumb:vertical:hover{background-color:#666}
+::-webkit-scrollbar-corner:vertical{background-color:#535353}
+::-webkit-scrollbar-resizer:vertical{background-color:#FF6E00}

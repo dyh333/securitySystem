@@ -1,0 +1,28 @@
+ <div id="popupWin"  class="list-group-itemL">
+    {{#for (var queryList in d.attribute) {}}
+        <div class="row">
+            {{#if (queryList.indexOf("$") > 0) {}}
+                {{#var itemSplit = queryList.split('$')}}
+                <span class="col-xs-4  noPaddingLeft noPaddingRight text-right">{{itemSplit[0]}}：</span>
+                {{#if(d.attribute[queryList]===""){}}
+                    <span class="col-xs-8 noPaddingLeft"></span>
+                {{#}else{}}
+                    <span class="col-xs-8 noPaddingLeft">{{d.attribute[queryList]}}   {{itemSplit[1]}}</span>
+                {{#}}}
+            {{#}else {}}
+               <span class="col-xs-4  noPaddingLeft noPaddingRight text-right">{{queryList}}：</span>
+               <span class="col-xs-8 noPaddingLeft">{{d.attribute[queryList]}}</span>
+            {{#}}}
+        </div>
+    {{#}}}
+</div>
+{{#if (!$.isEmptyObject(d.querylist)) {}}
+    <div id="popupFooter"  class="text-right">
+         {{#for (var item in d.querylist) {}}
+                {{#var linkUrl = d.querylist[item]}}
+                {{#if (linkUrl.indexOf('device') === -1){}}
+                     <a class="popupLink" onclick="{{linkUrl}}">{{item}}</a>
+                {{#}}}
+         {{#}}}
+    </div>
+{{#}}}

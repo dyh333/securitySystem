@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet"  href="../resource/js/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet"  href="../chartTable/chartTable.css?v=1.0.0">
+    <title>查询统计结果</title>
+</head>
+<body>
+    <div class="container">
+        <div class="l-clear"></div>
+        <div id="maingrid" class="grid"></div>
+    </div>
+    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script src="../resource/js/ligerUI/js/core/base.js"></script>
+    <script src="../resource/js/ligerUI/js/plugins/ligerGrid.js"></script>
+    <script src="../resource/js/ligerUI/js/plugins/ligerResizable.js"></script>
+    <script type="text/javascript">
+       $(function () {
+           var key = getQueryString("key"),
+                   serviceUrl = parent.mapLayerConfig.getServiceUrlByName(getQueryString("serviceKey"));
+           parent.geoneAjax.handleAjax({
+               url: serviceUrl, data: {key: key}, callback: function (result) {
+                   var columns = result.data.grid.columns, data = result.data.grid.data;
+                   showBootTable(columns, data);
+               }
+           });
+
+           function showBootTable(columns, data) {
+               var grid = $("#maingrid").ligerGrid({
+                   columns: columns,
+                   data: {
+                       Rows: data,
+                       Total: data.length
+                   },
+                   headerRowHeight: 35,
+                   allowAdjustColWidth: true,
+                   usePager: false,
+                   width: '99%',
+                   height: '100%'
+               });
+           }
+       });
+    </script>
+</body>
+</html>

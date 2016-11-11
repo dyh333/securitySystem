@@ -1,0 +1,25 @@
+{{#for(var i = 0, len = d.data.length; i < len; i++){}}
+    <div  class="list-group-item"   onclick="{{d.eventName}}.position({{d.data[i].id}})">
+        <div class="row listImgHead">
+            <span class="col-xs-2"><span class="mark-Icon mark{{i+1}}"></span></span>
+            <span class="col-xs-10 title noPaddingLeft " style="line-height: 33px">{{d.data[i].name}}</span>
+        </div>
+        <div class="row"></div>
+        {{#for (var queryList in d.data[i].showlist) {}}
+            <div class="row">
+                {{#if (queryList.indexOf("$") > 0) {}}
+                    {{#var itemSplit = queryList.split('$')}}
+                    <span class="col-xs-4  noPaddingLeft noPaddingRight text-right">{{itemSplit[0]}}：</span>
+                    {{#if(d.data[i].showlist[queryList]===""){}}
+                        <span class="col-xs-8 noPaddingLeft"></span>
+                    {{#}else{}}
+                        <span class="col-xs-8 noPaddingLeft">{{d.data[i].showlist[queryList]}}   {{itemSplit[1]}}</span>
+                    {{#}}}
+                {{#}else {}}
+                   <span class="col-xs-4  noPaddingLeft noPaddingRight text-right">{{queryList}}：</span>
+                   <span class="col-xs-8 noPaddingLeft">{{d.data[i].showlist[queryList]}}</span>
+                {{#}}}
+            </div>
+        {{#}}}
+    </div>
+{{#}}}

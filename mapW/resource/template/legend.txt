@@ -1,0 +1,2 @@
+<div class="top"><img src="../resource/legend/{{d.name}}" alt=""></div>
+<div class="footer"><span>图例</span><img src="resource/img/bg.png" class="other-Icon Icon-close" alt=""></div>

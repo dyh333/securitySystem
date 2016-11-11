@@ -1,0 +1,23 @@
+<span id="toolBar" class="Icon-toolBar"></span>
+{{# for(var i = 0, len = d.length; i < len; i++){}}
+    <ul>
+        {{#if(!d[i].children===false){}}
+            {{# for(var j = 0, lenT= d[i].children.length; j < lenT; j++){}}
+                {{#if(!d[i].children[j].children===false){}}
+                    <li class="dropDownList">
+                        <span id="{{d[i].children[j].toolKey}}"  class="Icon-toolBar {{d[i].children[j].toolKey}}" title="{{d[i].children[j].name}}"><span class="Icon-toolBar dot"></span></span>
+                        <ul>
+                            {{# for(var k = 0, lenS= d[i].children[j].children.length; k < lenS; k++){}}
+                                <li><span id="{{d[i].children[j].children[k].toolKey}}" class="Icon-toolBar {{d[i].children[j].children[k].toolKey}}" title="{{d[i].children[j].children[k].name}}"></span></li>
+                            {{#}}}
+                        </ul>
+                    </li>
+                {{#}else{}}
+                     <li>
+                        <span id="{{d[i].children[j].toolKey}}"  class="Icon-toolBar {{d[i].children[j].toolKey}}" title="{{d[i].children[j].name}}"></span>
+                     </li>
+                {{#}}}
+            {{#}}}
+        {{#}}}
+    </ul>
+{{#}}}

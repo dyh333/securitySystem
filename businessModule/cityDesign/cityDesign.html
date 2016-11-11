@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>城市设计</title>
+    <link href="../resource/css/animations.css" rel="stylesheet">
+    <link href="../resource/css/pageChangeStyle.css?v=1.0.0" rel="stylesheet">
+</head>
+<body>
+    <div class="pt-perspective">
+    <div class="container pt-page-1 pt-page pt-page-current ">
+        <div class="row">
+            <div class="caption">
+                <span class="title">东盟上谷</span>
+                <span data-href="cityDesign/img/鸟瞰.jpg" class="fullView">查看大图</span>
+            </div>
+            <img src="img/thumbnail/鸟瞰.jpg"  alt="" data-roadType="3001">
+        </div>
+    </div>
+    <div class="containerList pt-page-2 pt-page">
+        <div class="header"><span class="back">返回</span><span class="title"></span></div>
+        <div class="container list-group">
+            <div class="row">
+                <div class="caption">
+                    <span class="title">黄昏</span>
+                    <span data-href="cityDesign/img/黄昏.jpg" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/黄昏.jpg"  alt="">
+            </div>
+            <div class="row">
+                <div class="caption">
+                    <span class="title">方案鸟瞰</span>
+                    <span data-href="cityDesign/img/方案鸟瞰.jpg" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/方案鸟瞰.jpg"  alt="">
+            </div>
+            <div class="row">
+                <div class="caption">
+                    <span class="title">方案形态</span>
+                    <span data-href="cityDesign/img/方案形态.jpg" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/方案形态.jpg"  alt="">
+            </div>
+            <div class="row">
+                <div class="caption">
+                    <span class="title">用地性质</span>
+                    <span data-href="cityDesign/img/用地性质.jpg" class="fullView">查看大图</span>
+                </div>
+                <img src="img/thumbnail/用地性质.jpg"  alt="">
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script>
+        $(document).on("click", ".container .fullView", function () {
+            event.preventDefault();
+            var viewHref = $(this).data("href"), title = $(this).children("h4").html();
+            parent.myLayer.showPhoto(title, "businessModule/" + viewHref);
+        });
+        $(document).on("click", ".pt-page-1 img", function () {
+            onEndAnimation($(".pt-page-1"), $(".pt-page-2"), 1);
+        });
+        $(document).on("click", ".containerList .back", function () {
+            onEndAnimation($(".pt-page-2"), $(".pt-page-1"), 2);
+        });
+
+        function onEndAnimation($outpage, $inpage,state) {
+            switch (state) {
+                case 1:
+                    $outpage.removeClass("pt-page-moveFromLeft").addClass("pt-page-moveToLeft");
+                    $inpage.removeClass("pt-page-moveToRight").addClass("pt-page-moveFromRight").addClass("pt-page-current");
+                    break;
+                case 2:
+                    $outpage.removeClass("pt-page-moveFromRight").addClass("pt-page-moveToRight");
+                    $inpage.removeClass("pt-page-moveToLeft").addClass("pt-page-moveFromLeft").addClass("pt-page-current");
+                    break;
+            }
+            setTimeout(function () {
+                $outpage.removeClass("pt-page-current");
+            }, 500);
+        }
+        
+        $(function () {
+            //初始化加载范围
+            var serviceUrl = parent.mapLayerConfig.getServiceUrlByName("queryCityDesign");
+            parent.geoneAjax.handleAjax({
+                url: serviceUrl, data: {key: "东盟商谷"}, callback: function (res) {
+                    parent.window.drawGeometryToMap(res.data, false, true);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

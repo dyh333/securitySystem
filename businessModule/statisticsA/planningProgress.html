@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>规划历年进展</title>
+    <style>
+        body{
+            margin: 0;padding: 30px 0 0;
+        }
+        ul,li{margin:0;padding: 0;}
+        li{list-style-type: none;float: left;width: 100px;border-bottom: 1px solid black;border-left: 1px solid black;height: 10px;}
+        li:last-child{border-bottom: 0;width: 0;}
+        li>span{position: relative;top: -20px;left: -17px;}
+    </style>
+</head>
+<body>
+    <div style="width: 720px;margin-left:40px;">
+        <ul>
+            <li><span>2007</span></li>
+            <li><span>2008</span></li>
+            <li><span>2010</span></li>
+            <li><span>2011</span></li>
+            <li><span>2012</span></li>
+            <li><span>2013</span></li>
+            <li><span>2014</span></li>
+        </ul>
+    </div>
+    <input id="yearRange" type="range" min="10" max="70" step="10" value="10" style="width: 616px;margin-left: 34px;">
+    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script type="application/javascript">
+        var serviceUrl=null,year=[2007,2008,2010,2011,2012,2013,2014];
+        $(function () {
+            var rangeValue = 10;
+            serviceUrl = parent.mapLayerConfig.getServiceUrlByName("layerChangeService");
+            showProcess(10);
+            var timer = setInterval(function () {
+                rangeValue = rangeValue + 10;
+                if (rangeValue > 70) {
+                    parent.window.mapClear();
+                    rangeValue = 10;
+                }
+                $("#yearRange").val(rangeValue);
+                showProcess(rangeValue);
+            }, 3000);
+        });
+        function showProcess(rangeValue) {
+            parent.geoneAjax.handleAjax({
+                url: serviceUrl + year[rangeValue / 10 - 1], data: {}, callback: function (res) {
+                    //绘制图形
+                    parent.window.drawGeometryToMap(res.data, false, false, "radom");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

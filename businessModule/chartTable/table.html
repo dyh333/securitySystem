@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet"  href="../resource/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="../resource/js/bootstrap-table/bootstrap-table.css">
+    <link rel="stylesheet"  href="chartTable.css?v=1.0.0">
+    <title>查询统计结果</title>
+    <style>
+        .fixed-table-container {
+            height: 555px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table id="reportTable"></table>
+    </div>
+    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script src="../resource/js/bootstrap.min.js"></script>
+    <script src="../resource/js/bootstrap-table/bootstrap-table.js"></script>
+    <script type="text/javascript">
+       $(function () {
+           var zzjgdm = getQueryString("id"), serviceUrl = parent.mapLayerConfig.getServiceUrlByName("hrService");
+           parent.geoneAjax.handleAjax({
+               url: serviceUrl, data: {zzjgdm: zzjgdm}, callback: function (result) {
+                   var columns = result.data.grid.columns, data = result.data.grid.data;
+                   showBootTable(columns, data);
+               }
+           });
+
+           function showBootTable(columns, data) {
+               $('#reportTable').bootstrapTable({
+                   sortable: false,
+                   cache: false,
+                   striped: true,
+                   height: 560,
+                   strictSearch: true,
+                   columns: columns,
+                   data: data,
+                   formatNoMatches: function () {
+                       return '无符合条件的记录';
+                   }
+               });
+           }
+       });
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+body{font-family:"Microsoft YaHei";font-size:12px;margin:0;padding:0;color:#3d3d3d;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;overflow:hidden}
+li,ul{margin:0;padding:0;list-style:none;text-decoration: none;}
+a{text-decoration:none}
+img{border:none}
+/**图层对比 遮罩层Start**/
+.zheZhao{position:absolute;left:0;top:0;bottom:0;width:50%;z-index:7;overflow:hidden;border-right:2px solid grey;}
+.unSelect{-webkit-user-select:none;-moz-user-select:none;-khtml-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}
+/**图层对比 遮罩层End**/
+.map{position:absolute;width:100%;height:100%;background-image: url("../img/mapbg.gif")}
+.baseMapBarContainer{position:absolute;top:15px;right:15px;height:30px;z-index:9}
+.baseMapBarContainer>ul>li{cursor:pointer;float:left;line-height:30px;text-align:center;vertical-align:middle;margin-left:10px;padding:0 10px 0 3px;border:0;background:#fff;box-shadow: 0 0 4px #777;}
+.baseMapBarContainer>ul>li.dropDown.active{background:#fff;height:36px;color:#000;border-bottom:0; box-shadow: -4px 0 4px -4px #777, /*左边阴影*/ 0 -4px 4px -4px #777, /*顶部阴影*/ 0 0 0 white, /*底部阴影*/4px 0 4px -4px #777; /*右边阴影*/}
+.baseMapBarContainer>ul>li.active{background:#0593d3;color:#fff;}
+.baseBarDetailContainer{position:absolute;top:51px;right:15px;padding:10px 0;background:#fff;width:235px;z-index: 8;box-shadow: 0 0 4px #777;}
+/**图层控制样式Start**/
+.layerViewContainer>section.layer-header{line-height:30px;font-size:12px;border-bottom:1px solid #d2d2d2;margin:0 10px}
+.layerViewContainer>section.layer-header>div.tools{float:right;cursor:pointer}
+.layerViewContainer>section.layer-content{padding-top:10px;margin:0 0 0 10px;overflow-x:hidden;overflow-y: auto;}
+.layerViewContainer>section.layer-content .list-group-item{line-height:22px}
+.layerViewContainer>section.layer-content span.indent{margin-left:5px!important}
+.layerViewContainer>section.layer-content span.icon{vertical-align:middle;margin-right:3px!important;color:gray;cursor:pointer}
+.layerViewContainer>section.layer-content ul{margin:0 0 10px 10px;}
+.layerViewContainer>section.layer-content ul li{text-overflow:ellipsis;white-space:nowrap}
+.layerViewContainer>section.layer-content ul li img{display:inline-block;vertical-align:middle;border:0}
+.layerViewContainer>section.layer-content ul li span{font-size:18px}
+.layerViewContainer>section.layer-content ul li>p{display:inline;font-size:13px}
+.layerViewContainer>section.layer-content ul li>div.layerTools{float:right;height:22px;padding:0 10px;}
+/**图层控制样式End**/
+/**toolsBarContainer Start**/
+#toolsBarContainer{position: absolute;left: 15px;top:15px;width:30px;z-index: 2;}
+#toolsBarContainer>.Icon-toolBar{box-shadow:0 0 4px #777;}
+#toolsBarContainer>.Icon-toolBar:hover{background-color:#e8f8ff; }
+#toolsBarContainer>ul{margin-top: 4px;float: left;box-shadow:0 0 4px #777;}
+#toolsBarContainer>ul li.dropDownList.nav-hover>ul{display: block;}
+#toolsBarContainer>ul li.dropDownList.nav-hover>span.active{}
+#toolsBarContainer>ul li>span:hover{background-color:#e8f8ff; }
+#toolsBarContainer>ul li>ul{position: absolute;left: 30px;display:none;}
+#toolsBarContainer>ul li>ul>li{float: left;margin-left: 5px;box-shadow:0 0 4px #777;  }
+#toolsBarContainer>ul li>ul>li>span:hover{background-color:#e8f8ff;}
+/**toolsBarContainer End**/
+/**quickSearch Start**/
+/***查询框***/
+
+.quickSearch{position: absolute;left: 60px;top: 15px;padding: 0 !important;}
+.quickSearch>select{font-family: "Microsoft Yahei";position:relative;font-size: 12px;padding: 5px 0 5px 5px;border: 1px solid #0593d3;margin-right: -5px;width: 100px;outline: medium;}
+.quickSearch>input{font-family: "Microsoft Yahei";font-size: 12px;padding: 6px;width: 249px;color:#999999;border: 1px solid #0593d3;outline: medium;}
+.quickSearch>button{font-family: "Microsoft Yahei";background:#0593d3;border: none;color: white;padding: 6px 13px 7px;padding: 6px 13px 6px\0; outline: medium;cursor: pointer;}
+.quickSearch>span.Icon-rotating{position: absolute;z-index: 9;right: 54px;display: none;}
+.quickSearchResult{position: absolute;left: 60px;top:44px;padding: 10px 0 0;width: 363px;background: white;border: 1px solid #0593d3;display: none;z-index: 9;}
+.quickSearchResult>.resultPanel-header{height: 30px;border-bottom: 1px solid #d2d2d2;}
+.quickSearchResult>.resultPanel-header li{background: white;width:50px;padding: 7px 10px 8px;margin-left: 20px;border: 1px solid #d2d2d2;border-bottom: 0;}
+.quickSearchResult>.resultPanel-header>img{float: right;margin-top: -31px;}
+.quickSearchResult>.resultPanel-header>.resultMsg{float: right;color: #333;margin: -25px 30px 0 0;}
+.quickSearchResult>.resultPanel-header>.resultMsg>.resultTotal{color:#0593d3;font-size:16px;}
+.quickSearchResult>.resultPanel-content{background: white;height:calc(100% - 70px);overflow: auto;}
+.quickSearchResult>.resultPanel-footer{background: white;height:40px;text-align: center;padding: 4px 0 0;}
+.quickSearchResult>.resultPanel-content .list-group-item{position: relative;display:block;padding:10px 15px;margin-bottom:10px;background-color:#fff;border: 0;color:#3d3d3d;font-size: 12px;cursor: pointer;}
+.quickSearchResult>.resultPanel-content .list-group-item:hover{background-color: #f8f8f8;}
+.quickSearchResult>.resultPanel-content .list-group-item>.row{line-height: 20px;}
+.quickSearchResult>.resultPanel-content .list-group-item .listImgHead{font-size: 14px;color: #3d3d3d;}
+/**quickSearch End**/
+/**copyRight Start**/
+.copyRight {position: absolute;right: 15px;bottom: 15px;font-size: 14px;font-weight: 600;}
+/**copyRight End**/
+/**右击菜单Start**/
+.nav-header{display:block;padding:3px 12px;font-size:11px;font-weight:700;line-height:20px;color:#999;text-shadow:0 1px 0 rgba(255,255,255,.5);text-transform:uppercase}
+.dropdown-menu{position:absolute;top:100%;left:0;width:130px;text-align:center!important;z-index:1000;display:none;float:left;padding:2px 0;margin:2px 0 0;list-style:none;background-color:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);font-family:"Microsoft Yahei",Helvetica,Arial,sans-serif;font-size:12px;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);-moz-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2);-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;text-align:left}
+.dropdown-menu.pull-right{right:0;left:auto}
+.dropdown-menu .divider{height:1px;overflow:hidden;background-color:#e5e5e5;border-bottom:1px solid #fff}
+.dropdown-menu a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:20px;color:#333;white-space:nowrap;text-decoration:none}
+.dropdown-menu li>a:focus,.dropdown-menu li>a:hover,.dropdown-submenu:hover>a{color:#fff;text-decoration:none;background-color:#08c;background-color:#0081c2;background-image:-moz-linear-gradient(top,#08c,#0077b3);background-image:-webkit-gradient(linear,0 0,0 100%,from(#08c),to(#0077b3));background-image:-webkit-linear-gradient(top,#08c,#0077b3);background-image:-o-linear-gradient(top,#08c,#0077b3);background-image:linear-gradient(to bottom,#08c,#0077b3);background-repeat:repeat-x;filter:progid: dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
+.dropdown-menu .active>a,.dropdown-menu .active>a:hover{color:#fff;text-decoration:none;background-color:#08c;background-color:#0081c2;background-image:linear-gradient(to bottom,#08c,#0077b3);background-image:-moz-linear-gradient(top,#08c,#0077b3);background-image:-webkit-gradient(linear,0 0,0 100%,from(#08c),to(#0077b3));background-image:-webkit-linear-gradient(top,#08c,#0077b3);background-image:-o-linear-gradient(top,#08c,#0077b3);background-repeat:repeat-x;outline:0;filter:progid : dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)}
+.dropdown-menu .disabled>a,.dropdown-menu .disabled>a:hover{color:#999}
+.dropdown-menu .disabled>a:hover{text-decoration:none;cursor:default;background-color:transparent}
+.open>.dropdown-menu{display:block}
+.pull-right>.dropdown-menu{right:0;left:auto}
+.dropup .caret,.navbar-fixed-bottom .dropdown .caret{border-top:0;border-bottom:4px solid #000;content:"\2191"}
+.dropup .dropdown-menu,.navbar-fixed-bottom .dropdown .dropdown-menu{top:auto;bottom:100%;margin-bottom:1px}
+.dropdown-submenu{position:relative}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px}
+.dropdown-submenu>.dropdown-menu.drop-left{left:-100%}
+.dropdown-submenu:hover .dropdown-menu{display:block}
+.dropdown-submenu>a:after{display:block;float:right;width:0;height:0;margin-top:5px;margin-right:-10px;border-color:transparent;border-left-color:#ccc;border-style:solid;border-width:5px 0 5px 5px;content:" "}
+.dropdown-submenu:hover>a:after{border-left-color:#fff}
+.dropdown .dropdown-menu .nav-header{padding-right:20px;padding-left:20px}
+.dropdown-context .nav-header{cursor:default}
+.dropdown-context-up:before,.dropdown-context:before{position:absolute;top:-7px;left:9px;display:inline-block;border-right:7px solid transparent;border-bottom:7px solid #ccc;border-left:7px solid transparent;border-bottom-color:rgba(0,0,0,.2);content:''}
+.dropdown-context-up:after,.dropdown-context:after{position:absolute;top:-6px;left:10px;display:inline-block;border-right:6px solid transparent;border-bottom:6px solid #fff;border-left:6px solid transparent;content:''}
+.dropdown-context-up:after,.dropdown-context-up:before{top:auto;bottom:-7px;z-index:9999}
+.dropdown-context-up:before{border-right:7px solid transparent;border-top:7px solid #ccc;border-bottom:none;border-left:7px solid transparent}
+.dropdown-context-up:after{border-right:6px solid transparent;border-top:6px solid #fff;border-left:6px solid transparent;border-bottom:none}
+.dropdown-context-sub:after,.dropdown-context-sub:before{display:none}
+.dropdown-context .dropdown-submenu:hover .dropdown-menu{display:none}
+.dropdown-context .dropdown-submenu:hover>.dropdown-menu{display:block}
+.compressed-context a{padding-left:14px;padding-top:0;padding-bottom:0;font-size:13px}
+.compressed-context .divider{margin:5px 1px}
+.compressed-context .nav-header{padding:1px 13px}
+/**右击菜单End**/
+/**slider**/
+.ui-slider-horizontal{height:.2em !important;}
+.ui-slider-horizontal .ui-slider-handle{top:-.6em!important;}
+.ui-slider .ui-slider-handle{width: .6em}
+input[type="range"]{margin-bottom: 5px;width: 120px;margin-left: -7px;}
+/**测量Start**/
+.resultMsg{font-size:14px;color:#fff;text-align:center;display:inline-flex}
+.ui-tooltip-content{font-size:12px;font-family:"Microsoft Yahei";color:#6C6C6C}
+.measureResult{word-wrap:break-word;padding:5px;background-color:#fff;font-size:9pt;border:1px solid #ff0103}
+.measureInfoClose{text-decoration:none;background-color:#fff;font-weight:700;margin-left:10px;color:red;border:1px solid #ff0103}
+.text-right{text-align:right}
+/**测量End**/
+/**esri弹出层Start**/
+.esriPopup .titlePane{font-size:14px;color:#fff;background-color:#434343;font-weight:700;padding:8px 0 8px 16px}
+.esriPopup .titlePane .title{padding-right:20px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.esriPopup .titleButton.close{top:8px;right: 10px;opacity:1}
+#popupContent ul{margin:0!important;padding-left:10px;list-style-type:none;text-decoration:none;font-size:12px;font-family:"Microsoft Yahei";color:#6C6C6C}
+.esri-popup .esri-background{background-color:rgba(248,248,248,1)}
+.esriPopup a{color:#369;text-decoration:none!important;}
+.esriPopup .popupLink{cursor:pointer}
+.esriPopup .pointer{background-color:#F7F7F7!important}
+.esriPopup .pointer.top{background-color:#434343!important}
+.esriPopup .pointer.topRight{background-color:#434343!important}
+.esriPopup .sizer{width: 310px !important;}
+.esriPopup .contentPane{padding: 0 !important;font-size: 12px;line-height: 20px;}
+.esriPopup .titleButton.maximize{visibility:hidden}
+#popupFooter{margin-top:5px;border-top:1px solid #d3d3d3;height:25px;line-height:25px;padding: 0 10px;}
+.footerItem{display:inline-block;cursor:pointer;margin-top:3px;margin-right:8px;text-align:right}
+#popupWin{padding: 9px 9px 0 5px;border-bottom: 0 !important;background-color: #F7F7F7 !important;max-height: 260px;overflow-y: auto;}
+#popupWin:hover{background-color: white;}
+#popupWin>.row{margin-right: 0 !important;margin-left: 0 !important;}
+/**esri弹出层End**/
+/**图例Start**/
+#legendContainer{position:absolute;width:210px;left:15px;bottom:10px;max-height:300px;background-color:#fff;box-shadow:0 0 2px #777;z-index:99}
+#legendContainer>.top{text-align:center;padding-top:5px;}
+#legendContainer>.footer{width:100%;height:30px;line-height:30px;background-color:#EEE;text-align: right;}
+#legendContainer>.footer>span{float: left;padding: 0 10px;font-size: 12px;color: #000}
+#legendContainer>.footer>img{cursor: pointer;}
+/**图例End**/
+/**cmpMap**/
+.swipeCircle{background:rgba(0,0,0,.2);height:40px;width:40px;position:absolute;left:50%;top:50%;border-radius:40px;border:4px solid grey;z-index:100;cursor:pointer}
+/**bootstrat List Start**/
+.noPaddingLeft{padding-left:0!important}
+.noPaddingRight{padding-right:0!important}
+.row{margin-left:-15px;margin-right:-15px;}
+.list-group{padding-left: 0;}
+.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{float:left}
+.col-xs-2{width:16.66666667%;}
+.col-xs-4{width:33.33333333%}
+.col-xs-5{width:41.66666667%}
+.col-xs-7{width:58.33333333%}
+.col-xs-8{width:66.66666667%}
+.col-xs-10{width:83.33333333%}
+.col-xs-2>span.mark-Icon{margin-left: 20px;}
+.list-group-itemL{position:relative;display:block;background-color:#fff;border-bottom:1px solid #ddd;cursor:pointer;padding:9px 15px 10px 5px}
+.clearfix:after,.clearfix:before,.row:after,.row:before{content:" ";display:table}
+.clearfix:after,.row:after{clear:both}
+/**bootstrat End**/
+/**scroll**/
+::-webkit-scrollbar{width:4px;height:8px}
+::-webkit-scrollbar-button:vertical{display:none}
+::-webkit-scrollbar-track:vertical{background-color:#000}
+::-webkit-scrollbar-track-piece{background-color:#F5F5F5}
+::-webkit-scrollbar-thumb:vertical{margin-right:10px;background-color:#999}
+::-webkit-scrollbar-thumb:vertical:hover{background-color:#666}
+::-webkit-scrollbar-corner:vertical{background-color:#535353}
+::-webkit-scrollbar-resizer:vertical{background-color:#FF6E00}

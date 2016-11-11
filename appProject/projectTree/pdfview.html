@@ -1,0 +1,19 @@
+﻿<html>
+<head>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <title>PDF</title>
+    <script type="text/javascript" src="resource/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="resource/js/pdfobject.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var reportUrl = "http://192.168.42.75/geoneup/api/Document/GetDocument?guid=f65ef1be-7995-480a-acac-28b1074c46ed";
+            $("#down").attr("href", reportUrl);
+            var myPDF = new PDFObject({url: reportUrl}).embed();
+        };
+    </script>
+</head>
+
+<body>
+    <p>无法打开pdf插件，<a id="down" href="#">点击下载</a></p>
+</body>
+</html>

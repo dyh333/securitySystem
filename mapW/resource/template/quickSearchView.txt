@@ -1,0 +1,10 @@
+<select id="quickSearchSelect">
+   {{# for(var i = 0, len = d.length; i < len; i++){}}
+       {{#if(d[i].name.indexOf("*") > -1){}}
+           <option value="{{d[i].defaultValue}}" data-url="{{d[i].url}}"  disabled="disabled">{{d[i].name}}</option>
+       {{#}else{}}
+           <option value="{{d[i].defaultValue}}" data-url="{{d[i].url}}">{{d[i].name}}</option>
+       {{#}}}
+   {{#}}}
+</select>
+<input id="quickSearchKey" type="text" style="width: 200px;" placeholder="请输入查询内容" value="{{d[0].defaultValue}}"><span class="Icon Icon-rotating"></span><button id="quickSearchBtn" type="button" >搜索</button>

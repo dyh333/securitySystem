@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>cmpMap</title>
+    <link href="http://58.210.9.131/EsriJS/3.16local/esri/css/esri.css" rel="stylesheet"/>
+    <link href="resource/css/font-awesome.min.css" rel="stylesheet">
+    <link href="resource/css/mapStyle.css?v=1.0.0" rel="stylesheet">
+    <link href="resource/css/mapIcon.css?v=1.0.0" rel="stylesheet">
+</head>
+<body oncontextmenu="return false;">
+    <div id="map" style="width: 50%;margin-left: -1px;border-right:1px solid #2f4050;left: 0;" class="map"></div>
+    <div id="map2" style="width: 50%;right: 0" class="map"></div>
+    <div class="swipeCircle" id="MMouse"></div>
+    <div id="leftContainer" class="baseMapBarContainer" style="left: 5px;">
+        <ul>
+            <li data-role="leftView" class="dropDown"><span class="Icon Icon-layerView"></span>图层</li>
+        </ul>
+    </div>
+    <div id="rightContainer" class="baseMapBarContainer">
+        <ul>
+            <li data-role="rightView" class="dropDown"><span class="Icon Icon-layerView"></span>图层</li>
+        </ul>
+    </div>
+    <div id="leftViewContainer" class="layerViewContainer baseBarDetailContainer" style="left: 15px;display: none">
+        <section id="leftView" class="layer-content"></section>
+    </div>
+    <div id="rightViewContainer" class="layerViewContainer baseBarDetailContainer" style="display: none;">
+        <section id="rightView" class="layer-content"></section>
+    </div>
+
+    <script src="resource/js/jquery-3.1.0.min.js"></script>
+    <script src="http://58.210.9.131/EsriJS/3.16local/init.js"></script>
+    <script src="resource/plugins/bootstrap/bootstrap-treeview.min.js"></script>
+    <script src="resource/mapApi/mapAllAPI.js?v=1.0.0"></script>
+    <script src="resource/js/cmpMapInit.js?v=1.0.0"></script>
+    <!--<script  language="JavaScript">-->
+        <!--document.write("<script src='http://"+parent.mapLayerConfig.getIP()+"/EsriJS/3.16/init.js'><\/script>");-->
+        <!--$("<link>")-->
+                <!--.attr({-->
+                    <!--rel: "stylesheet",-->
+                    <!--type: "text/css",-->
+                    <!--href: "http://" + parent.mapLayerConfig.getIP() + "/EsriJS/3.16/esri/css/esri.css"-->
+                <!--}).appendTo("head");-->
+    <!--</script>-->
+    <script>
+        cmpMapInit.init();
+    </script>
+</body>
+</html>

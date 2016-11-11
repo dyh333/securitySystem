@@ -1,0 +1,9 @@
+<ul>
+    {{# for(var i = 0, len = d.length; i < len; i++){}}
+        {{#if(d[i].defaultVisible==="1"){}}
+            <li id={{d[i].name}} data-role="{{d[i].name}}" class="baseMap baseBtn active"><span class="Icon Icon-{{d[i].name}} active"></span>{{d[i].label}}</li>
+        {{#}else{}}
+            <li id={{d[i].name}} data-role="{{d[i].name}}" class="baseMap baseBtn"><span class="Icon Icon-{{d[i].name}}"></span>{{d[i].label}}</li>
+        {{#}}}
+    {{#}}}
+</ul>

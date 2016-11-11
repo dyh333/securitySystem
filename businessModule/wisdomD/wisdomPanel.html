@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet"  href="../resource/js/ligerUI/skins/Aqua/css/ligerui-all.css">
+    <link rel="stylesheet"  href="../resource/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="../chartTable/chartTable.css?v=1.0.0">
+    <title>智慧征拆</title>
+    <style>
+        #columnChart{
+            height: 500px;
+            width: 780px;
+        }
+    </style>
+</head>
+<body>
+<div class="container container11">
+    <ul class="nav nav-tabs">
+        <li  class="active"><a href="#tdlyxz" data-toggle="tab" >征地分布</a></li>
+        <li ><a href="#jmdfb" data-toggle="tab">拆迁分布</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade in active " id="tdlyxz">
+            <div class="topLeft" >
+                <div class="l-clear"></div>
+                <div id="maingrid" class="grid"></div>
+            </div>
+            <div style="height: 330px;width: 780px" id="maingridChart"></div>
+        </div>
+        <div class="tab-pane fade active" id="jmdfb">
+            <div class="topLeft" >
+                <div class="l-clear"></div>
+                <div id="maingrid2" class="grid"></div>
+            </div>
+            <div style="height: 330px;width: 780px" id="maingrid2Chart"></div>
+        </div>
+    </div>
+</div>
+<script src="../resource/js/jquery-3.1.0.min.js"></script>
+<script src="../resource/js/bootstrap.min.js"></script>
+<script src="../resource/js/ligerUI/js/core/base.js"></script>
+<script src="../resource/js/ligerUI/js/plugins/ligerGrid.js"></script>
+<script src="../resource/js/ligerUI/js/plugins/ligerResizable.js"></script>
+<script src="../resource/js/jquery.canvasjs.min.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        parent.geoneAjax.handlePostAjax({
+            url: parent.mapLayerConfig.getServiceUrlByName("wisdomYdService"),
+            data: {wkt: parent.mapLayerConfig.getDrawShape()},
+            callback: function (result) {
+                showResult(result, "maingrid");
+                showChart(result, "maingridChart");
+            }
+        });
+
+        parent.geoneAjax.handlePostAjax({
+            url: parent.mapLayerConfig.getServiceUrlByName("wisdomJmdService"),
+            data: {wkt: parent.mapLayerConfig.getDrawShape()},
+            callback: function (result) {
+                showResult(result, "maingrid2");
+                showChart(result, "maingrid2Chart");
+            }
+        });
+    };
+
+    function  showResult(result,id) {
+        var data = result.data.grid.data;
+        var grid = $("#" + id).ligerGrid({
+            columns: result.data.grid.columns,
+            data: {
+                Rows: data,
+                Total: data.length
+            },
+            headerRowHeight: 35,
+            allowAdjustColWidth: true,
+            usePager: false,
+            width: '99%',
+            height: '280px'
+        });
+    }
+
+    function showChart(result,id) {
+        var chart = new CanvasJS.Chart(id, result.data.chart[0]);
+        chart.render();
+    }
+</script>
+</body>
+</html>
