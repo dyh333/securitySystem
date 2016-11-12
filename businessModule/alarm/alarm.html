@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+    <link href="../resource/css/commonStyle.css" rel="stylesheet">
+    <link href="../../mapW/resource/css/mapIcon.css" rel="stylesheet">
+    <link href="../resource/css/alarm.css" rel="stylesheet">
+</head>
+<body>
+    <div id="searchPanel" class="searchPanel" style="display:none !important;"></div>
+    <div id="statusLegend">
+        <div><img src="../resource/img/alarm/btn_banding_no.png" /><span>预警</span></div>
+        <div><img src="../resource/img/alarm/btn_banding_ok.png" /><span>处理</span></div>
+        <div><img src="../resource/img/alarm/btn_banding_cancel.png" /><span style="display:inline-block; height:20px;">解除</span></div>
+    </div>
+    <div class="resultPanel">
+        <div class="resultPanel-header">
+            <ul>
+                <li>搜索结果</li>
+            </ul>
+            <span class="resultMsg">共 <span id="resultTotal" class="resultTotal">0</span> 个结果</span>
+        </div>
+        <div id="resultContent" class="resultPanel-content">
+
+        </div>
+        <div id="footerPage" class="resultPanel-footer">
+
+        </div>
+    </div>
+    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script src="alarm.js"></script>
+</body>
+</html>

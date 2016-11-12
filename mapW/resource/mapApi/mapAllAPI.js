@@ -125,40 +125,17 @@ var mapInit=(function () {
     };
 
 
-    var initBdMap = function() {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "http://api.map.baidu.com/api?v=2.0&ak=shp0CX7jzC3xySBLVWqGT51xt4Oc8pyW&callback=mapInit.initBdMapCompleted";
-        document.body.appendChild(script);
-    }
+ 
 
-    var initBdMapCompleted = function() {
-        map = new BMap.Map("map", {minZoom: 4, maxZoom: 16});    // 创建Map实例
+   
+    
 
-        map.setMapStyle({style:'grayscale'});
-
-        //添加地图类型控件
-        map.addControl(new BMap.MapTypeControl());
-        map.addControl(new BMap.NavigationControl());    
-        map.addControl(new BMap.ScaleControl());       
-        map.enableScrollWheelZoom(true);
-
-        map.centerAndZoom(new BMap.Point(120.6670992, 31.3117564), 15);  // 初始化地图,设置中心点坐标和地图级别
-        map.setCurrentCity("苏州");          // 设置地图显示的城市 此项是必须设置的
-
-        //map.centerAndZoom("苏州",15);  //dingyh 在此不起作用
-
-
-        //panoTest();
-
-    };
+    
 
     return {
         init: function () {
             moduleInit();
-        },
-        initBdMap: initBdMap,
-        initBdMapCompleted: initBdMapCompleted
+        }
     }
 })();
 /***module***/

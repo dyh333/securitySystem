@@ -51,6 +51,13 @@
 		}]
 	},
 	{
+		"name": "警情查询",
+		"icon": "Icon-qycx",
+		"href": "businessModule/alarm/alarm.html?moduleName=qycx",
+		"viewStyle": "L",
+		"serviceUrl": ""
+	},
+	{
 		"name": "企业查询",
 		"icon": "Icon-qycx",
 		"href": "businessModule/search/search.html?moduleName=qycx",

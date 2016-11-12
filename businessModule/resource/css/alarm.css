@@ -1,0 +1,10 @@
+#statusLegend{
+    height: 30px;
+    margin-top: 5px;
+}
+
+#statusLegend > div {
+    line-height: 20px;
+    float: right;
+    margin-right: 10px;
+}

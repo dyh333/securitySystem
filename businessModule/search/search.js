@@ -139,6 +139,7 @@ var search=(function () {
             }
         });
         //地图绘制
+        
         parent.window.mapClear();
         parent.window.drawGeometryToMap(newQueryResult, false, true);
         parent.window.drawMarkToMap(newQueryResult, true, false);
