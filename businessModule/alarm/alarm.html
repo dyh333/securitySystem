@@ -12,7 +12,9 @@
     <div id="statusLegend">
         <div><img src="../resource/img/alarm/btn_banding_no.png" /><span>预警</span></div>
         <div><img src="../resource/img/alarm/btn_banding_ok.png" /><span>处理</span></div>
-        <div><img src="../resource/img/alarm/btn_banding_cancel.png" /><span style="display:inline-block; height:20px;">解除</span></div>
+        <div><img src="../resource/img/alarm/btn_banding_cancel.png" /><span>解除</span></div>
+        <div id="addAlarm" style="background-color: yellow;">添加警情</div>
+        
     </div>
     <div class="resultPanel">
         <div class="resultPanel-header">
@@ -28,7 +30,11 @@
 
         </div>
     </div>
-    <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script src="../resource/js/jquery-1.10.2.min.js"></script>
+    <script src="../resource/js/jquery.signalR-2.0.0.js"></script>
+    <script src="../resource/js/lodash.core.js"></script>
     <script src="alarm.js"></script>
+
+    <script src="http://localhost:43652/signalr111/hubs"></script>
 </body>
 </html>
