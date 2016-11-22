@@ -49,7 +49,8 @@ parent.window.mapClear = window.mapClear = function () {
 parent.window.drawMarkToMap = window.drawMarkToMap = function (res) {
     var markers = [];
     for(var i=0;i<res.length;i++){
-        var point = wktToBdPoint(res[i].shape);
+        // var point = wktToBdPoint(res[i].shape);
+        var point = latLngToBdPoint(res[i].shape[0], res[i].shape[1]);
 
         var marker = new BMap.Marker(point);  // 创建标注
         
@@ -93,11 +94,11 @@ parent.window.drawMarkToMap = window.drawMarkToMap = function (res) {
 
 
 parent.window.position = window.position = function (item) {
-    
     parent.geoneAjax.handleMapTemplate({
         tName: "bdPopUpContentView.txt", callback: function (IResultTemplate) {
             parent.laytpl(IResultTemplate).render(item, function (html) {
-                var point = wktToBdPoint(item.shape);
+                // var point = wktToBdPoint(item.shape);
+                var point = latLngToBdPoint(item.shape[0], item.shape[1]);
 
                 showSearchInfoWindow(item.name, html, point);
 
@@ -109,6 +110,10 @@ parent.window.position = window.position = function (item) {
 
     
 };
+
+function latLngToBdPoint(lat, lng){
+    return new BMap.Point(lng, lat);
+}
 
 function wktToBdPoint(wktStr){
     var wkt = new Wkt.Wkt();

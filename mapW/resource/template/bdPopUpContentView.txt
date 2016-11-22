@@ -1,12 +1,11 @@
 <div id="tabs">
   <ul>
-    <li><a href="#tabs-1">详情</a></li>
-    <li><a href="#tabs-3">视频列表</a></li>
+    <li><a href="#tabs-info">详情</a></li>
+    <li><a href="#tabs-video">视频列表</a></li>
   </ul>
   <div id="tabs-info">
     <div style="margin:0;line-height:20px;padding:2px;">
-        <img src="../businessModule/resource/img/alarm/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>
-        
+       
         {{#for (var key in d.attribute) {}}
             {{key}}：{{d.attribute[key]}}<br/>
         {{#}}}
