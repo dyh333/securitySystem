@@ -92,7 +92,15 @@ img.menu-Icon.Icon-setting{background-position: -300px 0;}
 img.menu-Icon.Icon-setting:hover{background-position: -300px -50px;}
 img.menu-Icon.Icon-setting.active{background-position: -300px -50px;}
 img.menu-Icon.Icon-dot{background-position: -344px -44px;}
-/**钦州一张图Menu**/
+/**** alaram ****/
+img.menu-Icon.Icon-jqcx{background-position: -150px 0;}
+img.menu-Icon.Icon-jqcx:hover{background-position: -150px -50px;}
+img.menu-Icon.Icon-jqcx.active{background-position: -150px -50px;}
+img.menu-Icon.Icon-dwcx{background-position: -200px 0;}
+img.menu-Icon.Icon-dwcx:hover{background-position: -200px -50px;}
+img.menu-Icon.Icon-dwcx.active{background-position: -200px -50px;}
+
+/**Menu**/
 img.menu-Icon.Icon-ywcx{background-position: -350px 0;}
 img.menu-Icon.Icon-ywcx:hover{background-position: -350px -50px;}
 img.menu-Icon.Icon-ywcx.active{background-position: -350px -50px;}
@@ -132,7 +140,8 @@ img.other-Icon.Icon-close{background-position: -120px 0;}
 img.other-Icon.Icon-close:hover{background-position: -120px -60px;}
 /**ICon others end**/
 /**POIMarker Start**/
-span.mark-Icon{background:url("../img/poi/icon-poi.png") no-repeat left;float: left;width: 30px;height: 30px;}
+span.mark-Icon{background:url("../img/alarm/poi_alarm.png") no-repeat left;float: left;width: 30px;height: 30px;}
+/*span.mark-Icon{background:url("../img/poi/icon-poi.png") no-repeat left;float: left;width: 30px;height: 30px;}*/
 span.mark-Icon.mark1{background-position: 0 0;}
 span.mark-Icon.mark2{background-position: -30px 0;}
 span.mark-Icon.mark3{background-position: -60px 0;}

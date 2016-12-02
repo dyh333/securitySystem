@@ -13,16 +13,16 @@ var login = (function () {
             });
 
         var $dragBln = false;
-        $(".main_image").touchSlider({
-            flexible: true,
-            speed: 200,
-            btn_prev: $("#btn_prev"),
-            btn_next: $("#btn_next"),
-            paging: $(".flicking_con a"),
-            counter: function (e) {
-                $(".flicking_con a").removeClass("on").eq(e.current - 1).addClass("on");
-            }
-        });
+        // $(".main_image").touchSlider({
+        //     flexible: true,
+        //     speed: 200,
+        //     btn_prev: $("#btn_prev"),
+        //     btn_next: $("#btn_next"),
+        //     paging: $(".flicking_con a"),
+        //     counter: function (e) {
+        //         $(".flicking_con a").removeClass("on").eq(e.current - 1).addClass("on");
+        //     }
+        // });
 
         $(".main_image").bind("mousedown",
             function () {
@@ -68,6 +68,7 @@ var login = (function () {
     };
     /*初始化用户信息*/
     var loginInit = function () {
+        
         $("#btnLogin").click(function () {
             if ($("#username").val() == "请输入您的用户名" || $("#username").val() == "") {
                 $("#erroInfo").text("请输入您的用户名");
@@ -124,20 +125,28 @@ var login = (function () {
     };
     /*检验登入*/
     var checkLogin = function () {
-        layer.msg('登入成功，正在跳转...', {icon: 1});
+        if($("#username").val() == "admin" && $("#password_2").val() == "123"){
+            layer.msg('登入成功，正在跳转...', {icon: 1});
 
-        $.getJSON('./resource/config/loginResult.json', function(result){
-            setTimeout(function () {
-                if ($('.checkboxOne label').children('i').hasClass('itwo')) {
-                    localStorage.setItem('qz_userAccount',base64encode(result.data.userInfo.userAccount));
-                    localStorage.setItem('userChecked', true);
-                }
-                else
-                    localStorage.setItem('userChecked', null);
-                    sessionStorage.setItem('qz_loginValue', JSON.stringify(result));
-                    loadOneMap();
-            }, 500);
-        });
+            $.getJSON('./resource/config/loginResult.json', function(result){
+                setTimeout(function () {
+                    if ($('.checkboxOne label').children('i').hasClass('itwo')) {
+                        localStorage.setItem('qz_userAccount',base64encode(result.data.userInfo.userAccount));
+                        localStorage.setItem('userChecked', true);
+                    }
+                    else
+                        localStorage.setItem('userChecked', null);
+                        sessionStorage.setItem('qz_loginValue', JSON.stringify(result));
+                        loadOneMap();
+                }, 500);
+            });
+        } else {
+            layer.closeAll();
+            alert("用户名或密码错误");
+            return false;
+        }
+
+        
         
 
         // var userName = $("#username").val(),

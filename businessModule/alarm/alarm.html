@@ -10,10 +10,19 @@
 <body>
     <div id="searchPanel" class="searchPanel" style="display:none !important;"></div>
     <div id="statusLegend">
-        <div><img src="../resource/img/alarm/btn_banding_no.png" /><span>预警</span></div>
-        <div><img src="../resource/img/alarm/btn_banding_ok.png" /><span>处理</span></div>
-        <div><img src="../resource/img/alarm/btn_banding_cancel.png" /><span>解除</span></div>
-        <div id="addAlarm" style="background-color: yellow;">添加警情</div>
+        <div>
+            <img style="vertical-align: middle;" src="../resource/img/alarm/icon_01_bj.png" />
+            <span style="vertical-align: middle;">预警</span>
+        </div>
+        <div>
+            <img style="vertical-align: middle;" src="../resource/img/alarm/icon_02_cl.png" />
+            <span style="vertical-align: middle;">处理</span>
+        </div>
+        <div>
+            <img style="vertical-align: middle;" src="../resource/img/alarm/icon_03_jc.png" />
+            <span style="vertical-align: middle;">解除</span>
+        </div>
+        <!--<div id="addAlarm" style="background-color: yellow;">添加警情</div>-->
         
     </div>
     <div class="resultPanel">
@@ -35,9 +44,8 @@
     <script src="//cdn.bootcss.com/signalr.js/2.2.0/jquery.signalR.min.js"></script>
     <script src="../resource/js/lodash.core.js"></script>
     <script src="http://192.168.34.181/PCHub/signalr/hubs"></script>
-    <script src="decorateData.js"></script>
+    <script src="../decorateData.js"></script>
     <script src="alarm.js"></script>
 
-    <script src="http://localhost:43652/signalr111/hubs"></script>
 </body>
 </html>

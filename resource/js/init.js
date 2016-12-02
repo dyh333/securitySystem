@@ -79,6 +79,7 @@ var bindEvent= function () {
     });
 
     $(document).on("click", "#sideNav>li.menu-toggle>a>img", function () {
+      
         if ($("body").hasClass("left-side-panel-expand"))
             $("body").toggleClass("left-side-expand left-side-expand-And-left-side-panel-expand");
         else

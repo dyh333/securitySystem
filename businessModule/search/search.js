@@ -2,10 +2,64 @@
  * Created by zhengsl on 2016/8/26.
  */
 $(function () {
-    search.renderSearch();
+    // search.renderSearch();
+
+    $("#searchBtn").on("click", function () {
+        // parent.geoneAjax.handleAjax({
+        //     url: 'businessModule/alarm/mock.todayAlarms.json', data: {}, callback: function (res) {
+        //         alarmResults = res.data;
+        //         showResult(res.data);
+        //     }
+        // });
+
+        $.getJSON('../alarm/mock.realAlarms.json', function (res) {
+            var decoratedData = decorateData.alarmData(res.Data);
+            
+            alarmResults = decoratedData;
+            search.showResult(decoratedData);
+        });
+    });
 });
 
-var search=(function () {
+var search=(function(){
+    var showResult = function (queryResult) {
+        
+        $("#resultContent").css("height", $(window).height() - $(".searchPanel").height() - 60 + 'px');
+
+        
+        showResultListItem(queryResult);
+    };
+
+    var showResultListItem = function (alarmResult, isInsert = false) {
+        $("#resultTotal").html(alarmResults.length);
+
+        parent.geoneAjax.handleTemplate({
+            tName: "leftQueryResultView.txt?v=1.0.0", callback: function (queryTemplate) {
+                parent.laytpl(queryTemplate).render({eventName: "search", data: alarmResult}, function (html) {
+
+                    if(isInsert){
+                        
+                        $( "#resultContent" ).prepend(html);
+                    } else {
+                        document.getElementById("resultContent").innerHTML = "";
+                        $( "#resultContent" ).append(html);
+                        // document.getElementById("resultContent").appendChild(html);
+                    }
+                });
+            }
+        });
+        //地图绘制
+        // parent.window.mapClear();
+        // parent.window.drawGeometryToMap(queryResult, false, true);
+        parent.window.drawMarkToMap(alarmResult);
+    };
+
+    return {
+        showResult: showResult
+    }
+})();
+
+var old_search=(function () {
     var serviceUrl = null, queryResult = [], newQueryResult = [];
 
     var renderSearchItem = function (moduleConfig) {

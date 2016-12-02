@@ -1,7 +1,7 @@
 {{#for(var i = 0, len = d.data.length; i < len; i++){}}
     <div  class="list-group-item"   onclick="{{d.eventName}}.position('{{d.data[i].id}}')">
         <div class="row listImgHead">
-            <span class="col-xs-2"><span class="mark-Icon mark{{i+1}}"></span></span>
+            <span class="col-xs-2"><span class="mark-Icon"></span></span>
             <span class="col-xs-10 title noPaddingLeft " style="line-height: 33px">{{d.data[i].name}}</span>
         </div>
         <div class="row"></div>

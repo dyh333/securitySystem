@@ -67,7 +67,7 @@ ul li {
 .login-content {
     width: 100%;
     height: 386px;
-    background-color: #eef8fa;
+    background-color: #30b7e2;
 }
 
 .login-contentInner {
@@ -169,7 +169,7 @@ ul li {
     text-align: center;
     padding: 40px 0;
     color: #939292;
-    background: url(../imgs/login-foot.png) no-repeat;
+    /*background: url(../imgs/login-foot.png) no-repeat;*/
 }
 
 .login-qrCode {

@@ -7,7 +7,12 @@
     <link href="../../mapW/resource/css/mapIcon.css?v=1.0.0" rel="stylesheet">
 </head>
 <body>
-    <div id="searchPanel" class="searchPanel"></div>
+    <div id="searchPanel" class="searchPanel">
+        <div class="listItemOne">
+            <input type="text" data-keyId=""  class="control" placeholder="请输入查询条件"  value=""/>
+            <button id="searchBtn" type="button" >搜索</button>
+        </div>	
+    </div>
     <div class="resultPanel">
         <div class="resultPanel-header">
             <ul>
@@ -23,6 +28,8 @@
         </div>
     </div>
     <script src="../resource/js/jquery-3.1.0.min.js"></script>
+    <script src="../resource/js/lodash.core.js"></script>
+    <script src="../decorateData.js"></script>
     <script src="search.js?v=1.0.0"></script>
 </body>
 </html>

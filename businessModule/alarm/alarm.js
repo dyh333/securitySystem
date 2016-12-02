@@ -25,12 +25,16 @@ var alarm=(function () {
         //         showResult(res.data);
         //     }
         // });
+        var url = 'http://192.168.34.181/pchub/service/event/history';
 
-        $.getJSON('mock.realAlarms.json', function (res) {
-            var decoratedData = decorateData.alarmData(res);
+        $.getJSON(url, function (res) {
+            // console.log(res);
+            var decoratedData = decorateData.alarmData(res.Data);
             
             alarmResults = decoratedData;
             showResult(decoratedData);
+        }).error(function(e) { 
+            alert("error"); 
         });
     }
 
@@ -60,12 +64,8 @@ var alarm=(function () {
     }
 
     var showResult = function (queryResult) {
-        
-       
-        
         $("#resultContent").css("height", $(window).height() - $("#statusLegend").height() - 60 + 'px');
 
-        
         showResultListItem(queryResult);
     };
 
@@ -90,7 +90,7 @@ var alarm=(function () {
         //地图绘制
         // parent.window.mapClear();
         // parent.window.drawGeometryToMap(queryResult, false, true);
-        parent.window.drawMarkToMap(alarmResult);
+        parent.window.drawMarkToMap(alarmResult, isInsert);
     };
 
     var position = function(id) {

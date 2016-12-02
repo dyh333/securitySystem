@@ -3,7 +3,7 @@
 	"message": "",
 	"data": {
 		"userInfo": {
-			"userAccount": "zhengsl",
+			"userAccount": "admin",
 			"userName": "admin",
 			"department": ""
 		},
@@ -71,7 +71,7 @@
 			"name": "copyRight",
 			"order": "",
 			"serviceUrl": "",
-			"config": "2016 格网科技"
+			"config": "2016 iGeo"
 		},
 		{
 			"name": "mapView",
@@ -79,205 +79,6 @@
 			"serviceUrl": "./resource/config/mapView.json",
 			"config": ""
 		}],
-		"services": [{
-			"name": "bussinessQueryKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetFQuerylist?appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=bussinessQueryKey"
-		},
-		{
-			"name": "bussinessStatKey",
-			"serviceUrl": "http://@IP/qzMap/appProject/chart/chart.html"
-		},
-		{
-			"name": "dltjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=dltj&param=[{'key':'tjlx','value':'#tjlx#'}]"
-		},
-		{
-			"name": "gcfxServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=gcfx"
-		},
-		{
-			"name": "gdsptjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=gdsptj"
-		},
-		{
-			"name": "ghydtjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=ghydtj"
-		},
-		{
-			"name": "gxfxServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=gxfx"
-		},
-		{
-			"name": "gxtjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=gxtj&ghlx='#ghlx#'"
-		},
-		{
-			"name": "hbqhtjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=hbqhtj&param=[{'key':'tjlx','value':'#tjlx#'}]"
-		},
-		{
-			"name": "hrService",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=hresource"
-		},
-		{
-			"name": "iQueryServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/iQuery.ashx?DBTag=qzcyy&method=point&xVer=1"
-		},
-		{
-			"name": "jzdttjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=jzdttj"
-		},
-		{
-			"name": "layerManagerServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/m.ashx?x=layerManager&appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=layerManagerServiceKey"
-		},
-		{
-			"name": "layerServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/x.ashx?x=layerManager&appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=layerServiceKey"
-		},
-		{
-			"name": "mapServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/x.ashx?x=mapView&appid=qzcyy&xDevice=iphone&xUserName=zhengsl&xDepartment=格网&xKey=mapServiceKey"
-		},
-		{
-			"name": "mapToolServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/m.ashx?x=mapTool&appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=mapToolServiceKey"
-		},
-		{
-			"name": "mapViewServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/m.ashx?x=mapView&appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=mapViewServiceKey"
-		},
-		{
-			"name": "menusServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/m.ashx?x=menus&appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=menusServiceKey"
-		},
-		{
-			"name": "mobileCompareServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/x.ashx?x=mapCompare&appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=mobileCompareServiceKey"
-		},
-		{
-			"name": "printService",
-			"serviceUrl": "http://192.168.42.71:6080/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
-		},
-		{
-			"name": "projectQueryService",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=projectQueryService&xmmc=#xmmc#"
-		},
-		{
-			"name": "queryBuildingServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/buildingTable?appid=qzcyy&modulename=lpb"
-		},
-		{
-			"name": "queryCityDesign",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=queryCityDesign"
-		},
-		{
-			"name": "queryCompanyByJgdmService",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&ServiceKey=queryQY&xKey=queryQY&qymc="
-		},
-		{
-			"name": "queryDKHX",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&ServiceKey=queryDKHX&xKey=queryDKHX&xmmc=#xmmc#&dkh=#dkh#"
-		},
-		{
-			"name": "queryDKXX",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=queryDKXX&xUserName=zhengsl&xDepartment=格网&xKey=queryDKXX"
-		},
-		{
-			"name": "queryFromDKH",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=queryFromDKH"
-		},
-		{
-			"name": "queryGDCX",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&ServiceKey=queryGDCX&xKey=queryGDCX&xmmc=#xmmc#&gdyt=#gdyt#"
-		},
-		{
-			"name": "queryImProject",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&ServiceKey=queryImProject&xKey=queryImProject&xmmc=#xmmc#"
-		},
-		{
-			"name": "queryJZDT",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&ServiceKey=queryJZDT&xKey=queryJZDT&xmmc=#xmmc#&jzyt=#jzyt#&jzcs=#jzcs#"
-		},
-		{
-			"name": "queryQY",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&ServiceKey=queryQY&xKey=queryQY&qymc=#qymc#&zzjgdm=#zzjgdm#"
-		},
-		{
-			"name": "queryRK",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&ServiceKey=queryRK&xKey=queryRK&xm=#xm#&sfzh=#sfzh#&jg=#jg#"
-		},
-		{
-			"name": "queryRoadByName",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=queryRoadByName"
-		},
-		{
-			"name": "queryRoadSection",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=queryRoadSection"
-		},
-		{
-			"name": "queryZDCX",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&ServiceKey=queryZDCX&xKey=queryZDCX&nf=#nf#&kfyt=#kfyt#"
-		},
-		{
-			"name": "quickFind_DKHX",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=quickFind_DKHX&xUserName=zhengsl&xDepartment=格网&xKey=quickFind_DKHX"
-		},
-		{
-			"name": "quickFind_Road",
-			"serviceUrl": "http://@IP/jsDataCenter/Q.ashx?DBTag=qzcyy&xKey=quickFind_Road"
-		},
-		{
-			"name": "quickSearchServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/m.ashx?x=quickQuery&appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=quickSearchServiceKey"
-		},
-		{
-			"name": "qysstjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=qysstj"
-		},
-		{
-			"name": "qyswServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=qysw"
-		},
-		{
-			"name": "rectSearchServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/iQuery.ashx?DBTag=qzcyy&method=rect&xVer=1"
-		},
-		{
-			"name": "rktjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=rktj&tilb=#tjlb#"
-		},
-		{
-			"name": "swipeLayerServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/m.ashx?x=mapCompare&appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=swipeLayerServiceKey"
-		},
-		{
-			"name": "sztpfxServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=sztpfx"
-		},
-		{
-			"name": "tcctjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=tcctj&param=[{'key':'xmmc','value':'#xmmc#'}]"
-		},
-		{
-			"name": "tdlyxztjServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=tdlyxztj"
-		},
-		{
-			"name": "widgetServiceKey",
-			"serviceUrl": "http://@IP/jsDataCenter/x.ashx?x=mapTool&appid=qzcyy&xUserName=zhengsl&xDepartment=格网&xKey=widgetServiceKey"
-		},
-		{
-			"name": "wisdomJmdService",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=wisdomJmd"
-		},
-		{
-			"name": "wisdomYdService",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=wisdomYd"
-		},
-		{
-			"name": "ydqdfxServiceKey",
-			"serviceUrl": "http://@IP/onemapsrv/GetStatsResult?appid=qzcyy&modulename=ydqdfx"
-		}]
+		"services": []
 	}
 }

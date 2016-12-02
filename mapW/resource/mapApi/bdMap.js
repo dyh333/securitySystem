@@ -46,21 +46,26 @@ parent.window.mapClear = window.mapClear = function () {
     map.clearOverlays();
 };
 
-parent.window.drawMarkToMap = window.drawMarkToMap = function (res) {
+parent.window.drawMarkToMap = window.drawMarkToMap = function (res, animate) {
     var markers = [];
     for(var i=0;i<res.length;i++){
         // var point = wktToBdPoint(res[i].shape);
         var point = latLngToBdPoint(res[i].shape[0], res[i].shape[1]);
 
-        var marker = new BMap.Marker(point);  // 创建标注
+        var myIcon;
+        if(animate){
+            myIcon = new BMap.Icon("./resource/img/alarm/alarm_animate.gif", new BMap.Size(50, 50));
+        } else {
+            myIcon = new BMap.Icon("./resource/img/alarm/poi_alarm.png", new BMap.Size(30, 30), { anchor: new BMap.Size(15, 30) });
+        }
+
+        var marker = new BMap.Marker(point, {icon: myIcon});  // 创建标注
         
         map.addOverlay(marker);               // 将标注添加到地图中
-        marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+        // marker.setAnimation(BMAP_ANIMATION_BOUNCE);
  
         addClickHandler(res[i], marker);
 		
-       
-
         if(i === 0){
             map.centerAndZoom(point, 15);
 
@@ -70,11 +75,15 @@ parent.window.drawMarkToMap = window.drawMarkToMap = function (res) {
         markers.push(marker);
     }
 
-    _.forEach(markers, function(marker) {
-        setTimeout(function() {
-            marker.setAnimation(null);
-        }, 3000);
-    });
+    if(animate){
+        _.forEach(markers, function(marker) {
+            setTimeout(function() {
+                // marker.setAnimation(null);
+                var staticIcon = new BMap.Icon("./resource/img/alarm/poi_alarm.png", new BMap.Size(30, 30), { anchor: new BMap.Size(15, 30) });
+                marker.setIcon(staticIcon);
+            }, 1000 * 10);
+        });
+    }
 
     
     function addClickHandler(item, marker){
