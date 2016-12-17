@@ -1,8 +1,17 @@
 {{#for(var i = 0, len = d.data.length; i < len; i++){}}
-    <div  class="list-group-item"   onclick="{{d.eventName}}.position('{{d.data[i].id}}')">
-        <div class="row listImgHead">
-            <span class="col-xs-2"><span class="mark-Icon"></span></span>
-            <span class="col-xs-10 title noPaddingLeft " style="line-height: 33px">{{d.data[i].name}}</span>
+    <div  class="list-group-item" onclick="{{d.eventName}}.position('{{d.data[i].id}}')">
+        <!-- <div class="row listImgHead"> -->
+        <div class="listImgHead">
+            <span class="col-xs-2"><span class="{{d.eventName}}-mark-Icon"></span></span>
+            
+            {{#if (d.editable) {}}
+                <span class="col-xs-9 title noPaddingLeft" style="line-height: 33px">{{d.data[i].name}}</span>
+                <span class="col-xs-1" style="line-height: 33px; float: right; margin-right: 5px;">
+                    <span class="badge" style="color: red;" onclick="{{d.eventName}}.startEdit('{{d.data[i].id}}');">编辑</span>
+                </span>
+            {{#}else {}}
+                <span class="col-xs-10 title noPaddingLeft" style="line-height: 33px">{{d.data[i].name}}</span>
+            {{#}}}  
         </div>
         <div class="row"></div>
         {{#for (var queryList in d.data[i].showlist) {}}

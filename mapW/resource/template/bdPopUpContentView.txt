@@ -7,7 +7,7 @@
     <div style="margin:0;line-height:20px;padding:2px;">
        
         {{#for (var key in d.attribute) {}}
-            {{key}}：{{d.attribute[key]}}<br/>
+            {{d.attribute[key].text}}：{{d.attribute[key].value}}<br/>
         {{#}}}
     </div>  
   </div>

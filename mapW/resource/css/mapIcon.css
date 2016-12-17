@@ -140,7 +140,8 @@ img.other-Icon.Icon-close{background-position: -120px 0;}
 img.other-Icon.Icon-close:hover{background-position: -120px -60px;}
 /**ICon others end**/
 /**POIMarker Start**/
-span.mark-Icon{background:url("../img/alarm/poi_alarm.png") no-repeat left;float: left;width: 30px;height: 30px;}
+span.alarm-mark-Icon{background:url("../img/alarm/poi_alarm.png") no-repeat left;float: left;width: 30px;height: 30px;}
+span.enterprise-mark-Icon{background:url("../img/enterprise/poi_enterprise.png") no-repeat left;float: left;width: 30px;height: 30px;}
 /*span.mark-Icon{background:url("../img/poi/icon-poi.png") no-repeat left;float: left;width: 30px;height: 30px;}*/
 span.mark-Icon.mark1{background-position: 0 0;}
 span.mark-Icon.mark2{background-position: -30px 0;}

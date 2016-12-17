@@ -5,6 +5,7 @@ $(function () {
 });
 
 var map;
+var mapPickedPoint;
 
 var initBdMap = function() {
     var script = document.createElement("script");
@@ -46,18 +47,23 @@ parent.window.mapClear = window.mapClear = function () {
     map.clearOverlays();
 };
 
-parent.window.drawMarkToMap = window.drawMarkToMap = function (res, animate) {
+parent.window.drawMarkToMap = window.drawMarkToMap = function (res, type, animate) {
     var markers = [];
-    for(var i=0;i<res.length;i++){
+    for(var i=0; i<res.length; i++){
         // var point = wktToBdPoint(res[i].shape);
         var point = latLngToBdPoint(res[i].shape[0], res[i].shape[1]);
 
         var myIcon;
-        if(animate){
-            myIcon = new BMap.Icon("./resource/img/alarm/alarm_animate.gif", new BMap.Size(50, 50));
-        } else {
-            myIcon = new BMap.Icon("./resource/img/alarm/poi_alarm.png", new BMap.Size(30, 30), { anchor: new BMap.Size(15, 30) });
+        if(type === 'alarm'){
+            if(animate){
+                myIcon = new BMap.Icon("./resource/img/alarm/alarm_animate.gif", new BMap.Size(50, 50));
+            } else {
+                myIcon = new BMap.Icon("./resource/img/alarm/poi_alarm.png", new BMap.Size(30, 30), { anchor: new BMap.Size(15, 30) });
+            }
+        } else if(type === 'enterprise'){
+            myIcon = new BMap.Icon("./resource/img/enterprise/poi_enterprise.png", new BMap.Size(30, 30), { anchor: new BMap.Size(15, 30) });
         }
+            
 
         var marker = new BMap.Marker(point, {icon: myIcon});  // 创建标注
         
@@ -115,10 +121,19 @@ parent.window.position = window.position = function (item) {
             });
         }
     });
-
-
-    
 };
+
+parent.window.pickMapPoint = window.pickMapPoint = function () {
+    map.addEventListener('click', pickMapPoint);
+
+    function pickMapPoint(e){
+        console.log(e.point);
+        mapPickedPoint = e.point;
+
+        map.removeEventListener('click', pickMapPoint);
+    }
+   
+}
 
 function latLngToBdPoint(lat, lng){
     return new BMap.Point(lng, lat);

@@ -25,7 +25,7 @@ var alarm=(function () {
         //         showResult(res.data);
         //     }
         // });
-        var url = 'http://192.168.34.181/pchub/service/event/history';
+        var url = 'http://58.210.9.131/pchub/service/event/history';
 
         $.getJSON(url, function (res) {
             // console.log(res);
@@ -66,15 +66,15 @@ var alarm=(function () {
     var showResult = function (queryResult) {
         $("#resultContent").css("height", $(window).height() - $("#statusLegend").height() - 60 + 'px');
 
-        showResultListItem(queryResult);
+        showResultListItem(queryResult, false);
     };
 
-    var showResultListItem = function (alarmResult, isInsert = false) {
+    var showResultListItem = function (alarmResult, isInsert) {
         $("#resultTotal").html(alarmResults.length);
 
         parent.geoneAjax.handleTemplate({
             tName: "leftQueryResultView.txt?v=1.0.0", callback: function (queryTemplate) {
-                parent.laytpl(queryTemplate).render({eventName: "alarm", data: alarmResult}, function (html) {
+                parent.laytpl(queryTemplate).render({eventName: "alarm", editable: false, data: alarmResult}, function (html) {
 
                     if(isInsert){
                         
@@ -90,7 +90,7 @@ var alarm=(function () {
         //地图绘制
         // parent.window.mapClear();
         // parent.window.drawGeometryToMap(queryResult, false, true);
-        parent.window.drawMarkToMap(alarmResult, isInsert);
+        parent.window.drawMarkToMap(alarmResult, "alarm", isInsert);
     };
 
     var position = function(id) {

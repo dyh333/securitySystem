@@ -31,6 +31,7 @@ ul,li{padding: 0;margin: 0;list-style-type: none;}
 .searchFooter>button{background:#0593d3;border: none;color: white;padding: 7px 12px; cursor: pointer;outline: medium;border-bottom: 1px solid #0593d3;margin-right: 10px;}
 /***bootStrap style***/
 .noPaddingLeft{padding-left:0!important}
+.editable{display: }
 .noPaddingRight{padding-right:0!important}
 .text-right{text-align: right;}
 .row{margin-left:-15px;margin-right:-15px;}
