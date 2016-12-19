@@ -3,17 +3,17 @@ var decorateData=(function () {
     function alarmData(datas){
         var fields = [
                         {'id': 'AlarmTime', 'text': '报警时间'}, 
-                        {'id': 'AutoHandled', 'text': 'AutoHandled'},
-                        {'id': 'ManualSend', 'text': 'ManualSend'}, 
-                        {'id': 'AlarmKey', 'text': 'AlarmKey'}, 
-                        {'id': 'AlmFlag', 'text': 'AlmFlag'}, 
-                        {'id': 'ClientID', 'text': 'ClientID'}, 
-                        {'id': 'ERFlag', 'text': 'ERFlag'}, 
+                        {'id': 'AutoHandled', 'text': '是否自动处理'},
+                        {'id': 'ManualSend', 'text': '自动发送'}, 
+                        {'id': 'AlarmKey', 'text': '报警关键字'}, 
+                        {'id': 'AlmFlag', 'text': '报警代码'}, 
+                        {'id': 'ClientID', 'text': '用户ID'}, 
+                        // {'id': 'ERFlag', 'text': 'ERFlag'}, 
                         {'id': 'AlarmCode', 'text': '报警类型'}, 
                         {'id': 'AlarmText', 'text': '报警详情'},
                         {'id': 'OrgAlmCode', 'text': '防区编号'}, 
-                        {'id': 'ZuFlag', 'text': 'ZuFlag'}, 
-                        {'id': 'ZUInfo', 'text': 'ZUInfo'}, 
+                        // {'id': 'ZuFlag', 'text': 'ZuFlag'}, 
+                        // {'id': 'ZUInfo', 'text': 'ZUInfo'}, 
                         {'id': 'UserAddr', 'text': '地址'}, 
                         {'id': 'Date', 'text': '报警日期'}
                      ];
@@ -54,15 +54,15 @@ var decorateData=(function () {
     function enterpriseData(datas){
         var fields = [
                         // {'id': 'Id', 'text': 'Id'}, 
-                        {'id': 'Name', 'text': '名称'},
-                        {'id': 'Addr', 'text': '地址'}, 
-                        {'id': 'Leader', 'text': '法人'}, 
-                        {'id': 'LeaderPhone', 'text': '法人电话'}, 
-                        {'id': 'SeperateOffice', 'text': 'SeperateOffice'}, 
-                        {'id': 'OfficePhone', 'text': 'OfficePhone'}, 
-                        {'id': 'PoliceStation', 'text': 'PoliceStation'}, 
-                        {'id': 'StationPhone', 'text': 'StationPhone'}, 
-                        {'id': 'Des', 'text': 'Des'}
+                        {'id': 'Name', 'text': '单位名称'},
+                        {'id': 'Addr', 'text': '单位地址'}, 
+                        {'id': 'Leader', 'text': '负责人'}, 
+                        {'id': 'LeaderPhone', 'text': '负责人电话'}, 
+                        {'id': 'SeperateOffice', 'text': '分局名称'}, 
+                        {'id': 'OfficePhone', 'text': '分局电话'}, 
+                        {'id': 'PoliceStation', 'text': '派出所'}, 
+                        {'id': 'StationPhone', 'text': '派出所电话'}, 
+                        {'id': 'Des', 'text': '单位描述'}
                      ];
 
         var showlistFields = ['Name', 'Addr', 'Leader', 'LeaderPhone'];             

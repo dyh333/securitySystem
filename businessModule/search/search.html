@@ -34,16 +34,20 @@
             </div>
         </div>
         <div class="containerList pt-page-2 pt-page">
-            <div class="header"><span class="back">返回</span><span class="title"></span></div>
+            <!--<div class="header"><span class="back">返回</span><span class="title"></span></div>-->
             <div class="img"></div>
-            <div class="listHead">
+            <div class="listHead" style="display: none;">
                 <ul>
                     <li>搜索结果</li>
                 </ul>
                 <span class="resultMsg">共 <span id="resultTotal" class="resultTotal">0</span> 个结果</span>
             </div>
             <div class="list-group"></div>
-            <div><span onClick="enterprise.updateEnterprise();" class="badge" style="color: red; cursor: pointer;">保存</span></div>
+            <div style="text-align: right;">
+                <!--<span onClick="enterprise.updateEnterprise();" class="badge" style="color: red; cursor: pointer;">保存</span>-->
+                <button onClick="enterprise.updateEnterprise();" type="button" style="background:#0593d3;border: none;color: white;padding: 8px 12px; margin-right: 30px; cursor: pointer;outline: medium;border-bottom: 1px solid #0593d3;">保存</button>
+                <button onClick="enterprise.stopEdit();" type="button" style="background:#0593d3;border: none;color: white;padding: 8px 12px; margin-right: 30px; cursor: pointer;outline: medium;border-bottom: 1px solid #0593d3;">取消</button>
+            </div>
         </div>
     </div>
 

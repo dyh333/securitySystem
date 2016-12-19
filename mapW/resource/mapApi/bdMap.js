@@ -15,7 +15,7 @@ var initBdMap = function() {
 }
 
 var initBdMapCompleted = function() {
-    map = new BMap.Map("map", {minZoom: 4, maxZoom: 16});    // 创建Map实例
+    map = new BMap.Map("map", {minZoom: 4, maxZoom: 16, enableMapClick:false});    // 创建Map实例
 
     map.setMapStyle({style:'grayscale'});
 
@@ -123,14 +123,17 @@ parent.window.position = window.position = function (item) {
     });
 };
 
-parent.window.pickMapPoint = window.pickMapPoint = function () {
+parent.window.pickMapPoint = window.pickMapPoint = function (options) {
+    map.setDefaultCursor("crosshair");
     map.addEventListener('click', pickMapPoint);
 
     function pickMapPoint(e){
-        console.log(e.point);
         mapPickedPoint = e.point;
 
         map.removeEventListener('click', pickMapPoint);
+        map.setDefaultCursor("default");
+
+        options.callback(mapPickedPoint);
     }
    
 }

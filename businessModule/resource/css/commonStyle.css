@@ -5,7 +5,7 @@ ul,li{padding: 0;margin: 0;list-style-type: none;}
 .resultPanel>.resultPanel-header>.resultMsg{float: right;margin: -25px 20px 0 0;}
 .resultPanel>.resultPanel-header>.resultMsg>.resultTotal{color:#0593d3;font-size:16px;}
 .resultPanel>.resultPanel-header li{background: white;width:70px;padding:8px; text-align:center;margin-left: 20px;border: 1px solid #d2d2d2;border-bottom: 0;}
-.resultPanel>.resultPanel-content{background: white;overflow: auto;}
+.resultPanel>.resultPanel-content{background: white;overflow-x: hidden;}
 .resultPanel>.resultPanel-footer{background: white;height:40px;text-align: center;padding: 4px 0 0;}
 /***查询框***/
 .searchPanel{background:#f8f8f8;padding:10px 20px;}
